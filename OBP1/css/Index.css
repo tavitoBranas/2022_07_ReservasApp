@@ -1,0 +1,49 @@
+/* Letra y fondo */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+/* Estilo inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+/* Estilo botoningreso */
+input[type="submit"] {
+  background-color: #56ca9f;
+  color: white;
+}
+/* Estilo botones */
+.button {
+  background-color: #56ca9f;
+  color: white;
+}
+
+.pic {
+  background-color: #56ca9f;
+  color: white;
+}
+/* Estilo contenedores */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+/* Letra Verde cuando cumplis con las condiciones */
+.si {
+  color: green;
+}
+/* Letra Roja cuando no cumplis con las condiciones */
+.no {
+  color: red;
+}
+
+/* Fondo de los formularios asi los vemos mas claro */
+
+table {
+  background-color: #89eac6;
+}

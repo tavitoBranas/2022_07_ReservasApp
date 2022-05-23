@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--estas cosas no tengo idea que son 
+    y porque esta el script abajo?-->
+    <link rel="stylesheet" href="./css/Index.css">
+    <title>Obligatorio P1</title>
+</head>
+<body> <!--considerar un lugar para mostrtar todos los lugares q tiene esta app, tipo en el menu principal:
+fotos, pequeña descripcion de lo que hay etc-->
+
+<!-- F01– Registrarse en la aplicación -->
+
+<div id="seleccionRegistroPersona" >
+    <div>
+        <!--aca iria un div para la imagen de arriba del texto?-->
+    </div>
+    <h1>Registro de Nuevo Usuario</h1> <br>
+    <h2>Bienvenido</h2>
+
+    <form>    
+    <label for="txtNamLastNam">Nombre y Apellido</label>
+    <input type="text" placeholder="Juan Diaz" id="txtNamLastNam"><br/><br/>
+    <!--te falta name idem al for y tambien el icono que dijimos para ayuda al usuario-->
+    <label for="txtUserName">Nombre de Usuario</label>
+    <input type="text" placeholder="juancitodiaz" id="txtUserName" name="txtUserName"><br>
+
+    <p>
+        <!--aca un p para explicarle al usuario como es el nombre de usuario, fijate en el archivo word-->
+    </p>
+    
+    <label for="cts1">Contraseña</label>
+    <input id="cts1" name="cts1" 
+    pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{4,}" 
+    title="Debe contener mínimo 1 número, 1 letra mayúscula, 1 letra minúscula y mínimo de 6 caracteres">
+    <!--chino basico lo de pattern-->
+    <br>
+    
+    <div id="msj">  <!--msjPassword?-->
+        <h3>La contraseña debe contener al menos :</h3>
+        <p id="letra" class= "no">1 Minúscula</p><!--letraMinus y letraMayus?-->
+        <p id="may" class= "no">1 Mayúscula </p>
+        <p id="num" class= "no">1 Número </p>
+        <p id="largo" class= "no">Mínimo 6 Caracteres</p><!--largoMin y largoMax para los id?-->
+        <p id="largo2" class= "no">Maximo 12 Caracteres</p>
+
+        <input type="checkbox" name="" id=""><a href="#">Acepto Terminos y condiciones</a><br><br/>
+        <!--aca lo vincularía a 
+        un pdf ponele para darle color-->
+        <input type="submit" id= "btnregistro1" value="Confirmar"/> <!--btnSeccionRegistrar-->
+    </form>
+</div>
+
+<hr>
+
+<div id= "seleccionIngresar" >
+  <p id="pResultado"></p> <!--no entiendo esto aca si ya esramos dentro del ingreso?--> <!--no estaba en el word
+    pero al ver esto me di cuenta lo mismo que vos, falta un boton de regresar en la sección donde se realiza el registro-->
+  <p>Ya estas registrado?</p>
+  <li id="btnSeccionIngresar" > 
+    <a> Ingresar</a> 
+  </li>
+</div>
+
+<!-- F02– Ingreso a la aplicación -->
+
+
+<div id= "seleccionIngresar1"><!--por que 1?-->
+        <div>
+            <!--aca iria un div para la imagen de arriba del texto del menu-->
+        </div>
+    <h1>Ingreso</h1>
+
+    <label for="txtBusquedaUSU"><b>Nombre de Usuario:</b></label>
+    <input type="text" placeholder="Ingresar Nombre de Usuario" id="txtBusquedaUSU"><br/><br/>
+    
+    <label for="txtBusquedaCONTRA"><b>Contraseña:</b></label>
+    <input type="password" placeholder="Ingresar Contraseña" name="psw1" id="txtBusquedaCONTRA" required><br/><br/>
+    <!--required? el name
+    aca no coincide con el for y deberian ser iguales para el click no?-->
+    <input type="button" value="Ingresar" id="btnIngresar1" class="button"><br/><br/>
+
+    <a href="#">Aun no formas parte de nuestra comunidad? Registrate ahora!</a><br/><br/> <!--ojo porque aca nos 
+      mostraria el registro no?-->
+    <a href="#">Link para empresas</a><br/><br/>
+    <input type="button" value="Volver 1" id="btnVolver1" class="button">
+
+    <hr>
+
+    <!-- F03 – Visualizar información estadística -->
+    <!-- Estas son las estadisticas solo para los usuarios -->
+    <!--aca no precisamos un div general para ocultar y mostrar dsp?-->
+    <article class="d-none d-md-block col-md-6 col-lg-4"> <!--chino basico-->
+        <div>
+            <!--aca iria un div para la imagen de arriba del texto del menu-->
+        </div>
+        <h2>
+        Estadisticas
+        </h2>
+        <table>
+            <tr>
+                <th>Locales con reservas concretadas</th>
+                <th>Reservas totales del cliente</th>
+                <th style="color: red">Reservas totales del local</th>
+                <th>Porcentaje de reservas realizadas por el usuario</th>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+            </tr>    
+        </table>
+        
+        <form> <!--porque un form de formulario acá-->
+
+        <!-- Aca insertamos los mensajes con js del local con mayor numero de reservas y el preferido  -->
+
+        <p id="pMayorReserv"></p>
+        <p id="pLocalPref"></p>
+        <input type="button" value="Volver 2" id="btnVolver2" class="button"> <!--este sería el botón regresar? Poeque este 
+        va a estar por todos lados, yo le puse <button id="btnRegresar">Regresar</button> para vincular la misma funcion
+    al mismo botón-->
+        </form><!--porque un form de formulario acá-->
+    </article>
+
+
+    <!-- Estas son las estadisticas solo para los locales -->
+
+    <!--aca no precisamos un div general para ocultar y mostrar dsp?-->
+    <article class="d-none d-md-block col-md-6 col-lg-4">
+        <div>
+            <!--aca iria un div para la imagen de arriba del texto del menu-->
+        </div>
+        <h2>
+        Estadisticas
+        </h2>
+        <table>
+            <tr>
+                <th>Porcentaje de ocupacion del local</th>
+                <th>Promedio de calificacion del local</th>
+                <th>Reservas pendientes hasta el momento</th>
+                <th>Reservas finalizadas hasta el momento</th>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+            </tr>    
+        </table>
+
+            <h3>
+            Su local en comparacion con los demas registrados en la aplicacion
+            </h3>
+
+            <table>
+                <tr>
+                    <th>Locales</th>
+                    <th>Calificacion</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        
+    </article>
+    
+</div>
+
+<input type="button" value="Volver 3" id="btnVolver3" class="button"> <!--idem q arriba-->
+<!--aca finalizaria ese div-->
+
+
+<!-- F04 – Habilitar y Deshabilitar disponibilidad. -->
+<!--aca faltaria otro div para esta seccion no?-->
+<div>
+    <!--aca iria un div para la imagen de arriba del texto del menu-->
+</div>
+<h2>Habilitacion y Deshabilitacion de disponibilidad de realizar reservas</h2>
+
+<label for="txtNamLastNam">Estado de disponibilidad de reservas</label> <!--viste que el for del label
+no es necesario aca no? o yo estoy equivocado?-->
+<select name="" id="">
+    <option value="H">Habilitado</option> <!--creo que esta opcion deberia de estar seleccionada 
+      por defecto selected="selected"-->
+    <option value="D">Deshabilitado</option>
+</select>
+
+<input type="submit" id= "btnregistro1" value="Confirmar"> <!--btnRegistro1?-->
+
+<!-- Mensaje que muestra el estado actual de la reserva -->
+<p id="pEstadoReserva"></p>
+
+<input type="button" value="Volver 4" id="btnVolver4" class="button"> <!--me matan los volver, es porque no podemos llamarle igual a 
+varios botones que hacen la misma funcion... o eso me suena-->
+
+<hr>
+
+<!-- F05 – Cambiar reservas de estado. -->
+
+<!--aca faltaria otro div para esta seccion no?-->
+<div>
+    <!--aca iria un div para la imagen de arriba del texto del menu-->
+</div>
+<h2>Cambiar el estado de las reservas</h2>
+<h3>A continuacion se muestran las reservas realizadas por clientes.</h3>
+<h3>Mediante este menu, Ud podra cambiar su estado a Finalizado. se muestran las reservas realizadas por clientes.</h3>
+
+<form action="/action_page.php"> <!--chino basico nuevamente-->
+    <input type="text" placeholder="Busqueda de clientes" name="search">
+    <button type="submit">Buscar</button>
+</form>
+
+
+<p id="pNombreCliente"></p>
+<p id="pNumeroCupos"></p>
+
+<input type="button" value="Cambiar a Finalizado">
+
+<p id="pEstadoNuevoRes"></p>
+
+<input type="button" value="Volver 5" id="btnVolver5" class="button">
+
+<div id="seleccionReservas">
+    <div>
+        <!--aca iria un div para la imagen de arriba del texto con dibujos y ademas debemos inlcuir al usuario Persona activo-->
+    </div>
+
+    <h1>Selección de reservas</h1>
+    <br />
+      
+    <b><label for="seleccionTipoLocal">Seleccione rubro</label></b>
+    <select id="seleccionTipoLocal">
+      <option value="default">Seleccione rubro</option>
+      <option>mas opciones?</option>
+    </select> 
+    <img id='infoSeleccionTipoLocal' src="/Imagenes/iconoInformacion.png" width="20px">
+    <br/><br/>
+
+    <b><label for="seleccionLocal">Seleccione local</label></b>
+    <select id="seleccionLocal">
+      <option value="default">Seleccione</option>
+      <option>mas opciones?</option>
+    </select> 
+
+    <p id="msjDefault"> <i>Los locales que se despliegan consideran solo aquellos que poseen cupos disponibles</i></p><br/> <br>
+
+    <div class="posSeleccionTipoLocal">
+      <div id="imagenReservaTipoLocal"><!--Aqui va imagen del tipo de local seleccionado--></div><br>
+      <table id="localSeleccionadoReserva">
+        <tbody>
+          <tr >
+            <td style='height:120px; width:200px; border:0.5px dotted black' id="imgLocalSeleccionado"></td>
+            <td style='height:120px; width:200px; border:0.5px dotted black' id="nombreLocalSeleccionado"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p id="msjCuposDisponibles"> aca cupos disponibles</p> <br/> <br>
+
+      <label for="seleccionCuposReserva">Seleccione cupos a reservar</label>
+      <input type="number" id="seleccionCuposReserva" name="seleccionCuposReserva" placeholder="Ingrese valor"><br/><br/><br/>
+
+      <div id="imagenReservaTipoLocal"><!--Aqui va imagen del tipo de local seleccionado--></div>
+      <button id="btnCancelarSeleccionLocal">Cancelar</button> <button id="btnConfirmarSeleccionLocal">Confirmar</button><br/><br/>
+    </div>
+    <div id="btnRegresarReservas">
+      <button id="btnRegresar">Regresar</button>
+    </div>
+    <br/><hr>
+  </div>
+
+  <div id="cancelarYlistadoReservas">
+
+    <div>
+      <!--aca iria un div para la imagen de arriba del texto con dibujos y ademas debemos inlcuir al usuario Persona activo-->
+    </div>
+
+    <div class="cancelacionReservas">
+      <h1>Cancelación de reservas</h1>
+      <br />
+      <span id="irListadoreservas"> 
+        <button id="btnIrListadoReservas">Ir a Listado de reservas pendientes</button>
+      </span>
+      <br/>
+      <p id="msjDefault"> <h4>A continuación se muestran las reservas posibles de ser canceladas</h4></p><br/> <br>
+      <div>
+        <table id="localSeleccionadoReserva">
+          <tbody>
+            <tr >
+              <td style='height:120px; width:230px; border:0.5px dotted black' id="imgReservado1">imagen</td>
+              <td style='height:120px; width:100px; border:0.5px dotted black' id="rubroReservado1">rubro</td>
+              <td style='height:120px; width:200px; border:0.5px dotted black' id="nombreReservado1">nombre</td>
+              <td style='height:120px; width:200px; border:0.5px dotted black' id="cuposReservados1">cupos</td>
+              <td style='height:120px; width:200px; border:0.5px dotted black' id="btnCancelacion1"><button id='btnCancelacion1'>Cancelar reserva</button></td>
+            </tr> <!--aca hay que ver como se generan las otras tablas a medida que se precisen, se hace desde js?-->
+          </tbody>
+        </table><br/><br/><br>
+      </div>
+    </div>
+
+    <div class="listadoReservas">
+      <h1>Listado de reservas</h1>
+      <br />
+      <span id="irCancelarReservas"> 
+        <button id="btnIrCancelarReservas">Ir a Cancelación de reservas</button>
+      </span>
+      <br/>
+      <p id="msjDefault"> <h4>A continuación se muestran las reservas en estado Pendiente</h4></p><br/> <br>
+      <div>
+        <table id="localSeleccionadoReserva">
+          <tbody>
+            <tr >
+              <td style='height:120px; width:230px; border:0.5px dotted black' id="imgReservado1">imagen</td>
+              <td style='height:120px; width:100px; border:0.5px dotted black' id="rubroReservado1">rubro</td>
+              <td style='height:120px; width:200px; border:0.5px dotted black' id="nombreReservado1">nombre</td>
+              <td style='height:120px; width:200px; border:0.5px dotted black' id="cuposReservados1">cupos</td>
+            </tr> <!--aca hay que ver como se generan las otras tablas a medida que se precisen, se hace desde js?-->
+          </tbody>
+        </table><br/><br/><br>
+      </div>
+    </div>
+
+    <button id="btnRegresar">Regresar</button>
+    <br/><br/><hr>
+  </div>
+
+  <div id="calificarReservas">
+
+    <div>
+      <!--aca iria un div para la imagen de arriba del texto con dibujos y ademas debemos inlcuir al usuario Persona activo-->
+    </div>
+
+    <h1>Calificación de reservas</h1>
+    
+    <p id="msjDefault"> <h4>A continuación se muestran las reservas concretadas posibles de ser calificadas.</p>
+    <p> Se emplea una escala del 1 al 5.</h4></p><br/>
+
+      <div id="imgCalificacion">aca va la imagen de caras para calificar</div>
+      <br/> <br>
+      <div>
+        <table id="localSeleccionadoReserva">
+          <tbody>
+            <tr >
+              <td style='height:120px; width:230px; border:0.5px dotted black' id="imgCalificacion1">imagen</td>
+              <td style='height:120px; width:100px; border:0.5px dotted black' id="rubroCalificacion1">rubro</td>
+              <td style='height:120px; width:200px; border:0.5px dotted black' id="nombreCalificacion1">nombre</td>
+              <td style='height:120px; width:200px; border:0.5px dotted black' id="calificacion1">
+                <select id="calificacion1">
+                  <option value='default'>calificar</option>
+                  <option value="">1 estrella</option>
+                </select>
+
+
+              </td>
+              <td style='height:120px; width:200px; border:0.5px dotted black' id="btnCancelacion1"><button id='btnCancelacion1'>Cancelar reserva</button></td>
+            </tr> <!--aca hay que ver como se generan las otras tablas a medida que se precisen, se hace desde js?-->
+          </tbody>
+        </table><br/><br/><br>
+      </div>
+    </div>
+    
+    <button id="btnRegresar">Regresar</button>
+    <br/><br/><hr>
+  </div>
+
+<script type="text/javascript" src="./js/Funciones.js"></script>
+<script type="text/javascript" src="./js/Data.js"></script>
+<script type="text/javascript" src="./js/Index.js"></script>
+
+</body>
+</html>
