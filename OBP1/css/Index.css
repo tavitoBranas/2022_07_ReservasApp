@@ -1,8 +1,65 @@
-/* Letra y fondo */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: white;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap");
+
+/*Alineacion de contenedores Inicio y Registro */
+.alineacionInicio {
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+  width: auto;
+  text-align: center;
+  
 }
+
+.alineacionHeader {
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+  width: 400px;
+  text-align: right;
+}
+
+
+
+/*Menu de acceso*/
+#navPrincipal{
+  display: flex;
+  align-items:center;
+}
+
+#navPrincipal,
+#navPrincipal li {
+  font-family: "Roboto Flex", sans-serif;
+  list-style-type: none;
+  padding-right: 7px;
+  padding-left: 7px;
+  float: left;
+  max-width: fit-content;
+}
+
+#navPrincipal a {
+  color: #000000;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+#cabezal {
+  background-color: #c8f3cf;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+/*Footer*/
+.redes,
+.redes img {
+  height: 25px;
+  width: 25px;
+  text-decoration: none;
+  padding: 5px;px;
+}
+
 /* Estilo inputs */
 input {
   width: 100%;
@@ -12,38 +69,35 @@ input {
   box-sizing: border-box;
   margin-top: 6px;
   margin-bottom: 16px;
-}
-/* Estilo botoningreso */
-input[type="submit"] {
-  background-color: #56ca9f;
-  color: white;
-}
-/* Estilo botones */
-.button {
-  background-color: #56ca9f;
-  color: white;
+  vertical-align: middle;
+  position: relative;
 }
 
-.pic {
-  background-color: #56ca9f;
-  color: white;
+/* Estilo botoningreso */
+input[type="submit"] {
+  background-color: #c8f3cf;
+  color: black;
 }
-/* Estilo contenedores */
-.container {
-  padding: 16px;
-  background-color: white;
-}
-/* Letra Verde cuando cumplis con las condiciones */
+
+/* Estilo botones */
+.button {
+  background-color:  #c8f3cf;
+  color: black;
+  cursor: pointer;
+} /*aca estilo para select y para unos cosos ahi de ir a cancelacion o listado*/
+
+/* Letra Verde cumplis roja no cumplis con las condiciones */
 .si {
   color: green;
 }
-/* Letra Roja cuando no cumplis con las condiciones */
+
 .no {
   color: red;
 }
 
 /* Fondo de los formularios asi los vemos mas claro */
 
+/*
 table {
   background-color: #89eac6;
 }
