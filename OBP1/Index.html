@@ -1,76 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--que significa esto?-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta charset="UTF-8"><!--Expresa la codificacion de caracteres-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Expresa como se maneja la pag en cuanto a 
+    reducciones de ancho-->
     <link rel="stylesheet" href="./css/Index.css">
     <script type="text/javascript" src="./js/Funciones.js"></script>
     <script type="text/javascript" src="./js/DataPersona.js"></script>
     <script type="text/javascript" src="./js/DataLocal.js"></script>
     <script type="text/javascript" src="./js/Index.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  <!--libreria que permite personalizar el alert--->
     <title>Obligatorio P1</title>
 </head>
 
 <body> 
 
-<header style="display:block"> <!--"container-fluid py-4"-->
-  <div class="alineacionHeader">
-    <p id="nombreUsuario"><i>Usuario Activo</i></p>
+<header >
+  <div class="alineacionHeader header " style="display:none">
+    <p id="nombreUsuario" style="font-size:large; letter-spacing:1px">Usuario Activo</p>
     <figure class="alineacionInicio">
       <img src="./Imagenes/LogosPrincipales.png" width="600px" alt="descripcion foto">
     </figure>
   </div>
 </header>
 
-<!-- Menu inicial -->
-<main class="menuPrincipal" style="display:block">
-  <div class="menuPrincipalPersona alineacionInicio" style="display:block"><!--id="contenedor"-->
-    <div class='alineacionInicio' id="cabezal">
-      <ul id="navPrincipal">
+<!-- Menu principal -->
+<main class="menuPrincipal">
+    <div class='menuPrincipalPersona' style="display:none">
+      <div id="cabezal" class="alineacionInicio">
+        <ul id="navPrincipal">
         <li>
-          <a id="irReservacion">Reservación de locales</a>
+          <a id="irReservacion" onclick="modificarMenu('irReservacion')">Reservación de locales</a>
         </li>
         <li>
-          <a id="irCancelacion">Cancelación y Reservaciones pendientes</a>
+          <a id="irCancelacion" onclick="modificarMenu('irCancelacion')">Cancelación y Reservaciones pendientes</a>
         </li>
         <li>
-          <a id="irCalificacion">Calificación de locales</a>
+          <a id="irCalificacion" onclick="modificarMenu('irCalificacion')">Calificación de locales</a>
         </li>
         <li>
-          <a id="irEstadisticasPersona">Estadísticas</a>
+          <a id="irEstadisticasPersona" onclick="modificarMenu('irEstadisticasPersona')">Estadísticas</a>
         </li>
         <li>
-          <a id="irSalirPersona">Salir</a>
-        </li>
-      </ul>
+          <a class="irSalir" onclick="onClickSalir()">Salir</a> 
+        </ul>
+      </div><br/><br/>
     </div>
-
-    <div class="menuPrincipalLocal" id="contenedor" style="display:block">
+    <div class="menuPrincipalLocal" style="display:none">
       <div id="cabezal" class="alineacionInicio">
         <ul id="navPrincipal">
           <li>
-            <a id="irHabilitacion">Habilitación de reservas</a>
+            <a id="irHabilitacion" onclick="modificarMenu('irHabilitacion')">Habilitación de reservas</a>
           </li>
           <li>
-            <a id="irEstadoReservas">Cambiar estado de reservas</a>
+            <a id="irEstadoReservas" onclick="modificarMenu('irEstadoReservas')">Cambiar estado de reservas</a>
           </li>
           <li>
-            <a id="irCupos">Modificación de cupos</a>
+            <a id="irCupos" onclick="modificarMenu('irCupos')">Modificación de cupos</a>
           </li>
           <li>
-            <a id="irEstadisitcasLocal">Estadísticas</a>
+            <a id="irEstadisticasLocal" onclick="modificarMenu('irEstadisticasLocal')">Estadísticas</a>
           </li>
           <li>
-            <a id="irSalirLocal">Salir</a>
+            <a class="irSalir" onclick="onClickSalir()">Salir</a>
           </li>
         </ul>
-      </div>
+      </div><br/><br/>
+    </div>
 </main>
 
-
 <!-- F02– Ingreso a la aplicación -->
-<main class="seleccionIngresar contenedor" style="display:block" >
+<main class="seleccionIngresar" style="display:block" >
 
   <div id= "idSeleccionIngresar" class="alineacionInicio">
 
@@ -91,7 +91,7 @@
 </main>
 
 <!-- F01– Registrarse en la aplicación -->
-<main class="seleccionRegistro " style="display:block">
+<main class="seleccionRegistro" style="display:none">
 
   <div id="idSeleccionRegistro" class="alineacionInicio">
 
@@ -103,15 +103,17 @@
       <input type="text" placeholder="Juan Diaz" name='txtNamLastNam' id="txtNamLastNam"><br/><br/>
 
       <label for="txtUserName">Nombre de Usuario</label>
-      <img id='infoNombreUsuario' src="/Imagenes/iconoInformacion.png" width="20px">
-      <input type="text" placeholder="juancitodiaz" id="txtUserName" name="txtUserName"><br>
+      <img id='infoNombreUsuario' src="/Imagenes/iconoInformacion.png" width="20px" 
+      title="Ingrese nombre de usuario sin espacios. Este nombre es el que utilizará en su ingreso">
+      <input type="text" placeholder="juancitodiaz" id="txtUserName" name="txtUserName"><br/>
       
       <label for="ctsRegistro">Contraseña</label>
-      <img id='infoContraseñaRegistro' src="/Imagenes/iconoInformacion.png" width="20px">
+      <img id='infoContraseñaRegistro' src="/Imagenes/iconoInformacion.png" width="20px" 
+      title="La contraseña debe de contener entre 6 y 12 caracteres, contar con al menos un número, una mayúscula y una minúscula">
 
-      <input id="ctsRegistro" name="ctsRegistro" placeholder="Contraseña"> <br>
-      
-      <div id="msjCtsRegistro" style="display:none">  
+      <input id="ctsRegistro" name="ctsRegistro" placeholder="Contraseña" type='password' onkeyup="validacionContraseña(document.querySelector('#ctsRegistro').value)"> <br>
+    </form>
+      <div id="msjCtsRegistro" style="display:block">  
         <h3>La contraseña debe contener al menos :</h3>
         <p id="letraMin" class= "no">1 Minúscula</p>
         <p id="letraMay" class= "no">1 Mayúscula </p>
@@ -120,72 +122,214 @@
         <p id="largoMax" class= "no">Maximo 12 Caracteres</p><br/>
       </div>
 
-      <p>Al <i> <b> Confirmar </i> </b>Ud.<a href="#" target="_blanck" >Acepta Terminos y condiciones</a></p><br><br/>
-      <!--aca lo vincularía a un pdf-->
-      <span class="btnRegistro">
-        <input type="submit" id= "btnRegistro" value="Confirmar" class="button alineacionInicio"/>
-      <span class="btnRegresar">
-        <input type="button" id= "btnRegresar" value="Regresar" class="button alineacionInicio"/>
-      </span>
-    </form>
+      <p>Al <i> <b> Confirmar </i> </b>Ud.<a href="./Imagenes/terminosYcondiciones.pdf" target="_blanck" >Acepta Terminos y condiciones</a></p><br><br/>
+      <input type="submit" id= "btnRegistro" value="Confirmar" class="button alineacionInicio btnRegistro"/><br/>
+      <input type="button" id= "btnRegresar" value="Regresar" class="button btnRegresar alineacionInicio" onclick='retornoAingreso()'/>
+    
   </div>
 </main>
 
 <!-- Pagina principal -->
 <main class="paginaPrincipal">
-  <div id="paginaPrincipalPersona" style="display:none">
-      <h1>NUESTROS SERVICIOS DE RESERVA</h1>
-        <figure id="iconoRestaurant">
-          <img src="img/noticia2.jpg" alt="icono de referencia">
-        </figure>   
+  <div class='alineacionInicio paginaPrincipalPersona' id="paginaPrincipalPersona" style="display:none">
+    <h1><u>NUESTROS SERVICIOS</u></h1><br/>
+    <div>
+      <figure id="iconoRestaurant">
+      <img class='logo' width="600px"src="./Imagenes/Restaurant logo.png" alt="Restaurant" >
+      </figure> <br/>  
       <article>
-              <figure>
-                  <h2>
-                  RESTAAURANT '....
-                  </h2>
-                  <img src="img/noticia1.jpg" alt="Imagen de restaurant">
-              </figure>
-              <div>
-                  <p>
-                  Sapporo, es la ciudad donde se realiza la maraton de los juegos olimpicos de Tokyo 2021. Carrera caminata y football, 
-                  es una ciudad con abundante naturaleza en cada estacion, un comodo ambiente urbano y un culto sofisticado estilo de vida. 
-                  Tanto como residentos como turistas quedan encantados por Sapporo, siendo esta una de las top 3 ciudades mas atractivas de Japon.
-                  </p>
-              </div>
-            </article>   
-            <!-- aca irian las otras opciones -->
+        <div id="imagen_impar">
+        <figure>
+          <h2>
+          <i>Lo de Pepe</i>
+          </h2>
+          <img src="./Imagenes/Restaurant 1.jpg" alt="Lo de Pepe foto">
+        </figure>
+        <div>
+          <p><h4>
+          Lo de Pepe, inaugurado en el 2002 se ha consolidado como uno de los referentes de la gastronomía de Montevideo. <br/>Su ambiente cálido y distendido es perfecto para turistas, políticos, ejecutivos y personalidades de la cultura del ámbito local e internacional.
+          <br/>Nuestra pasiónl generar experiencias memorables cuidando al máximo cada uno de los detalles, logrando así que nuestros clientes se conviertan en amigos de la casa.
+          <br/>Los esperamos en nuestro local ubicado en Punta Carretas.
+          </h4></p>
+        </div>
+      </div>
+      <div >
+        <figure>
+          <h2><br/><br/>
+          <i>Garage Burger</i>
+          </h2>
+          <img src="./Imagenes/Restaurant 2.jpg" alt="Garage burguer foto">
+        </figure>
+        <div>
+          <p><h4>
+          Garage Burguer, inaugurado en el 2002 se ha consolidado como uno de los referentes de la gastronomía de Montevideo. <br/>Su ambiente cálido y distendido es perfecto para turistas, políticos, ejecutivos y personalidades de la cultura del ámbito local e internacional.
+          <br/>Nuestra pasiónl generar experiencias memorables cuidando al máximo cada uno de los detalles, logrando así que nuestros clientes se conviertan en amigos de la casa.
+          <br/>Los esperamos en nuestro local ubicado en Punta Carretas.
+          </h4></p>
+        </div>
+      </div>
+        <figure>
+          <h2><br/><br/>
+          <i>Lisa</i>
+          </h2>
+          <img src="./Imagenes/Restaurant 3.jpg" alt="Garage burguer foto">
+        </figure>
+        <div>
+          <p><h4>
+          Lisa, inaugurado en el 2002 se ha consolidado como uno de los referentes de la gastronomía de Montevideo. <br/>Su ambiente cálido y distendido es perfecto para turistas, políticos, ejecutivos y personalidades de la cultura del ámbito local e internacional.
+          <br/>Nuestra pasiónl generar experiencias memorables cuidando al máximo cada uno de los detalles, logrando así que nuestros clientes se conviertan en amigos de la casa.
+          <br/>Los esperamos en nuestro local ubicado en Punta Carretas.
+          </h4></p><br/><br/>
+        </div>
+      </article>  
+    </div>
+    <div>
+      <figure id="iconoTeatro">
+      <img class='logo' width="600px"src="./Imagenes/Teatro logo.png" alt="Restaurant" >
+      </figure> <br/>  
+      <article>
+        <figure>
+          <h2>
+          <i>El Galpón</i>
+          </h2>
+          <img src="./Imagenes/Teatro 1.jpg" alt="Magnolias foto">
+        </figure>
+        <div>
+          <p><h4>
+          A lo largo de sus 72 años de historia, se ha constituido en un centro cultural, situado en la principal avenida de la ciudad de Montevideo, con tres salas teatrales. <br/>
+          Sin ningún tipo de apoyo o subvención estatal permanente, esta Institución, de las más antiguas, conocidas y respetadas en el mundo,<br/> se sostiene gracias al apoyo del público y a los sistemas de Socios de El Galpón y Socio Espectacular.
+          <br/>También ese departamento organiza presentaciones en los barrios de Montevideo y el interior del país.
+          </h4></p><br/>
+        </div>
+        <figure>
+          <h2>
+          <i>El Tinglado</i>
+          </h2>
+          <img src="./Imagenes/Teatro 2.jpg" alt="Magnolias foto">
+        </figure>
+        <div>
+          <p><h4>
+          A lo largo de sus 72 años de historia, se ha constituido en un centro cultural, situado en la principal avenida de la ciudad de Montevideo, con tres salas teatrales. <br/>
+          Sin ningún tipo de apoyo o subvención estatal permanente, esta Institución, de las más antiguas, conocidas y respetadas en el mundo,<br/> se sostiene gracias al apoyo del público y a los sistemas de Socios de El Galpón y Socio Espectacular.
+          <br/>También ese departamento organiza presentaciones en los barrios de Montevideo y el interior del país.
+          </h4></p><br/>
+        </div>
+        <figure>
+          <h2>
+          <i>Teatro Del Anglo</i>
+          </h2>
+          <img src="./Imagenes/Teatro 3.jpg" alt="Magnolias foto">
+        </figure>
+        <div>
+          <p><h4>
+          A lo largo de sus 72 años de historia, se ha constituido en un centro cultural, situado en la principal avenida de la ciudad de Montevideo, con tres salas teatrales. <br/>
+          Sin ningún tipo de apoyo o subvención estatal permanente, esta Institución, de las más antiguas, conocidas y respetadas en el mundo,<br/> se sostiene gracias al apoyo del público y a los sistemas de Socios de El Galpón y Socio Espectacular.
+          <br/>También ese departamento organiza presentaciones en los barrios de Montevideo y el interior del país.
+          </h4></p><br/><br/>
+        </div>
+      </article>
+    </div>
+    <div>
+      <figure id="iconoMuseo">
+      <img class='logo' width="650px"src="./Imagenes/Museo logo.png" alt="Museo" >
+      </figure> <br/>  
+      <article>
+        <figure>
+          <h2>
+          <i>Museo Del Prado</i>
+          </h2>
+          <img src="./Imagenes/Museo 1.jpg" alt="Magnolias foto">
+        </figure>
+        <div>
+          <p><h4>
+          A lo largo de sus 72 años de historia, se ha constituido en un centro cultural, situado en la principal avenida de la ciudad de Montevideo, con tres salas teatrales. <br/>
+          Sin ningún tipo de apoyo o subvención estatal permanente, esta Institución, de las más antiguas, conocidas y respetadas en el mundo,<br/> se sostiene gracias al apoyo del público y a los sistemas de Socios de El Galpón y Socio Espectacular.
+          <br/>También ese departamento organiza presentaciones en los barrios de Montevideo y el interior del país.
+          </h4></p><br/>
+        </div>
+        <figure>
+          <h2>
+          <i>Museo Del Prado</i>
+          </h2>
+          <img src="./Imagenes/Museo 2.jpg" alt="Museo del Prado foto">
+        </figure>
+        <div>
+          <p><h4>
+          A lo largo de sus 72 años de historia, se ha constituido en un centro cultural, situado en la principal avenida de la ciudad de Montevideo, con tres salas teatrales. <br/>
+          Sin ningún tipo de apoyo o subvención estatal permanente, esta Institución, de las más antiguas, conocidas y respetadas en el mundo,<br/> se sostiene gracias al apoyo del público y a los sistemas de Socios de El Galpón y Socio Espectacular.
+          <br/>También ese departamento organiza presentaciones en los barrios de Montevideo y el interior del país.
+          </h4></p><br/>
+        </div>
+        <figure>
+          <h2>
+          <i>Museo Contemporaneo</i>
+          </h2>
+          <img src="./Imagenes/Museo 3.jpg" alt="Museo Contemporaneo foto">
+        </figure>
+        <div>
+          <p><h4>
+          A lo largo de sus 72 años de historia, se ha constituido en un centro cultural, situado en la principal avenida de la ciudad de Montevideo, con tres salas teatrales. <br/>
+          Sin ningún tipo de apoyo o subvención estatal permanente, esta Institución, de las más antiguas, conocidas y respetadas en el mundo,<br/> se sostiene gracias al apoyo del público y a los sistemas de Socios de El Galpón y Socio Espectacular.
+          <br/>También ese departamento organiza presentaciones en los barrios de Montevideo y el interior del país.
+          </h4></p><br/>
+        </div>
+        <figure>
+          <h2>
+          <i>Louvre</i>
+          </h2>
+          <img src="./Imagenes/Museo 4.jpg" alt="Magnolias foto">
+        </figure>
+        <div>
+          <p><h4>
+          A lo largo de sus 72 años de historia, se ha constituido en un centro cultural, situado en la principal avenida de la ciudad de Montevideo, con tres salas teatrales. <br/>
+          Sin ningún tipo de apoyo o subvención estatal permanente, esta Institución, de las más antiguas, conocidas y respetadas en el mundo,<br/> se sostiene gracias al apoyo del público y a los sistemas de Socios de El Galpón y Socio Espectacular.
+          <br/>También ese departamento organiza presentaciones en los barrios de Montevideo y el interior del país.
+          </h4></p><br/>
+        </div>
+  </div>
   </div>
 
-  <div id="paginaPrincipalLocal" style="display:none">
-    <article>
-      <figure>
-          <h2>
-         Info del local
-          </h2>
-          <img src="img/noticia1.jpg" alt="Imagen de restaurant">
+  <div class='alineacionInicio paginaPrincipalLocal' id="paginaPrincipalLocal" style="display:none">
+    <h1>Estado actual de su local</h1><br/>
+    <div>
+      <article>
+        <figure>
+          <img src="./Imagenes/EstadoLocalEstrellas.png" width="250px" alt="Estado actual del local">
       </figure>
+        <div>
+          <h3>
+            La calificación del local durante el mes pasado alcanzó
+            <br/>el nivel correspondiente a un 81% de clientes <i>Muy Satisfechos </i>.<br/><br/><br/>
+            </h3>  
+      <figure>
+          <img src="./Imagenes/EstadoDelLocal.png" width="550px" alt="Estado actual del local">
+      </figure></div>
       <div>
-          <p>
-          Descripcion de como esta el local en terminos grales
-          </p>
+        <h3>
+          El procentaje de ocupación semanal es de 84%
+          </h3>
+          <h3>
+            Durante los fines de semana se han registrado procentajes de ocupación del 75%
+          </h3>
+          <h3>
+            El porcentaje de reservas concretadas en promedio por semana es del 55%
+          </h3>
+          <h3>
+            El porcentaje de reservas mensuales realizadas por los mismos clientes es del 38%
+          </h3>
       </div>
     </article> 
   </div>
-</div>
+  </div>
 </main>
 
 <!-- F03 – Visualizar información estadística -->
-<main class="estadisticas" style="display:none">
+<main class="estadisticas" >
    
-   <div id="estadisticasPersona" style="display:none" class="alineacionInicio"> 
-
+  <div class=" estadisticasPersona alineacionInicio" style="display:none" >      
+    <h1>Estadisticas</h1>  
     <article class="d-none d-md-block col-md-6 col-lg-4 alineacionInicio"> <!--chino basico-->
-        
-        <h2>
-        Estadisticas
-        </h2>
-
-        <table id="tableEstaidsticasPersona" class="alineacionInicio">
+      <table id="tableEstaidsticasPersona" class="alineacionInicio">
           <thead>
             <tr>
                 <th>Locales con reservas concretadas</th>
@@ -216,31 +360,26 @@
                 <td></td>
             </tr>  
           </tbody>  
-        </table>
-
-        <div id="mayorCantidadReservas">
+      </table>
+      <div id="mayorCantidadReservas">
           <p id="msjMayorCantidadReservas">
             <!-- Local donde este usuario ha realizado la mayor cantidad de reservas -->
           </p>
-        </div>
-
-        <div id="localPreferido">
+      </div>
+      <div id="localPreferido">
           <p id="msjLocalPreferido">
            <!-- WOW! EN base a sus reservas finalizadas, su local preferido es -->
           </p>
-        </div>
-
+      </div>
+   
     </article>
-
+    <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalPersona')"> 
   </div>
   
-  <div id="estadisticaLocal" style="display:block">
-
+  <div class='alineacionInicio estadisticasLocal' style="display:none">
+    <h1> Estadisticas</h1>
     <article class="d-none d-md-block col-md-6 col-lg-4 alineacionInicio"><!--chino basico-->
-        <h2>
-        Estadisticas
-        </h2>
-        <table id="tableEstadisticasLocal" class="alineacionInicio">
+      <table id="tableEstadisticasLocal" class="alineacionInicio">
           <thead>
             <tr>
                 <th>Porcentaje de ocupacion del local</th>
@@ -271,13 +410,9 @@
                 <td></td>
             </tr>  
           </tbody>  
-        </table>
-
-            <h3>
-            Su local en comparacion con los demas registrados en la aplicacion
-            </h3>
-
-            <table id="comparacionLocales" class="alineacionInicio">
+      </table>
+      <h2> Su local en comparacion con los demas registrados en la aplicacion</h2>
+      <table id="comparacionLocales" class="alineacionInicio">
               <thead>
                 <tr>
                     <th><!--imagenes--></th>    
@@ -297,39 +432,41 @@
                     <td></td>
                 </tr>
               </tbody>
-            </table>
+      </table>
         
     </article> 
+    <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalLocal')"> 
   </div>
 
-<input type="button" value="Resgresar" id="btnRegresar3" class="button alineacionInicio"> 
+
 
 </main>
 
 <!-- F04 – Habilitar y Deshabilitar disponibilidad. -->
 <main class="disponibilidad" style="display:none">
   <div class="alineacionInicio" >
-  <h2>Disponibilidad de realizar reservas</h2>
+  <h1>Disponibilidad de realizar reservas</h1>
 
   <label>Estado de disponibilidad de reservas</label> 
   <select id="disponibilidad">
       <option value="H" selected>Habilitado</option> 
       <option value="D" >Deshabilitado</option>
-  </select>
+  </select><br/><br/><br/>
+ 
 
   <input type="submit" id= "btnDisponibilidad" value="Confirmar" class="button alineacionInicio"> 
   
-  <p id="msjHabilitacionReserva"></p>
+  <p id="msjHabilitacionReserva"></p><br/>
 
-  <input type="button" value="Regresar" id="btnRegresar4" class="button alineacionInicio"> 
+  <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalLocal')"> 
+
 </div>
 </main>
-
 
 <!-- F05 – Cambiar reservas de estado. -->
 <main class="cambiarEstadoReservas" style="display:none">
   <div class="alineacionInicio" >
-  <h2>Cambio de estado de las reservas</h2>
+  <h1>Cambio de estado de las reservas</h1>
   <h3>A continuacion se muestran las reservas realizadas por clientes</h3>
   <h3>Mediante este menu, Ud podra cambiar su estado a <i>Finalizado</i></h3>
 
@@ -356,14 +493,15 @@
     </tbody>
   </table>
 
-  <input type="button" value="Regresar" id="btnRegresar5" class="button alineacionInicio"> 
+  <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalLocal')"> 
+
 </div>
 </main>
 
 <!-- F06– Modificación cupos de reservas -->
 <main class="modificacionCupos" style="display:none">
   <div id="idmodificacionCupos" class="alineacionInicio">
-    <h2>Modificación de cupos de las reservas</h2>
+    <h1>Modificación de cupos de las reservas</h1>
     <h3 id="msjReservasActuales"></h3>
     <label for="nuevoCupo">Nuevo cupo permitido</label>
     <input name="nuevoCupo" id="nuevoCupo" type="number">
@@ -371,8 +509,9 @@
     <h3 id="msjReservasModificadas"></h3>
     <h3 id="msjErrorCambioCupos"></h3>
 
-    <input type="button" value="Confirmar" id="confirmarCupos" class="button alineacionInicio">
-    <input type="button" value="Regresar" id="btnRegresar6" class="button alineacionInicio"> 
+    <input type="button" value="Confirmar" id="confirmarCupos" class="button alineacionInicio"><br/>
+    <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalLocal')"> 
+
 
   </div>
 </main>
@@ -397,7 +536,7 @@
   
   </div>
 
-  <div id="seleccionLocalReservas" class='alineacionInicio' style="display:none">
+  <div id="seleccionLocalReservas" class='alineacionInicio' style="display:block">
     <b><label for="seleccionLocal">Seleccione local</label></b>
     <select id="seleccionLocal">
       <option value="default">Seleccione</option>
@@ -440,16 +579,18 @@
       <input type="button" id="btnConfirmarSeleccionCupos" value="Confirmar" class="button alineacionInicio">
     </div>
   </div>
+  <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalPersona')"> 
+
 </main>
 
 <!-- F08– Cancelacion de reservas y F10- Listado de reservas pendientes-->
-<main class="cancelarYlistadoReservas" style="display:none"> 
+<main class="cancelarYlistadoReservas"> 
 
-  <div class="cancelacionReservas alineacionInicio" style="display:block"> 
+  <div class="cancelacionReservas alineacionInicio" style="display:none"> 
     <h1>Cancelación de reservas</h1>
     <br />
     <span id="irListadoReservas"> 
-      <button id="btnIrListadoReservas">Ir a Listado de reservas pendientes</button>
+      <button id="btnIrListadoReservas" onclick="modificarMenu('irListadoReservas')">Ir a Listado de reservas pendientes</button>
     </span>
     <br/>
     <h4>A continuación se muestran las reservas posibles de ser canceladas</h4><br>
@@ -486,13 +627,14 @@
         </tr>
       </tbody>
     </table>
+    <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalPersona')"> 
   </div>
 
-  <div class="listadoReservas alineacionInicio" style="display:block"> 
+  <div class="listadoReservas alineacionInicio" style="display:none"> 
     <h1>Listado de reservas pendientes</h1>
     <br />
     <span id="irListadoReservas"> 
-      <button id="btnIrCancelacionReservas">Ir a Cancelación de reservas</button>
+      <button id="btnIrCancelacionReservas" onclick="modificarMenu('irCancelacion')">Ir a Cancelación de reservas</button>
     </span>
     <br/>
     <h4>A continuación se muestran las reservas en estado pendiente</h4><br>
@@ -525,9 +667,10 @@
         </tr>
       </tbody>
     </table>
+    <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalPersona')"> 
   </div>
 
-  <input type="button" value="Regresar" id="btnRegresar8" class="button alineacionInicio" style="display:block"> 
+  
 </main>
 
 <!-- F10– Calificación de reservas-->
@@ -538,7 +681,7 @@
     <h1>Calificación de reservas</h1>
     <h4>A continuación se muestran las reservas concretadas posibles de ser calificadas.
     <p> Se emplea una escala del 1 al 5.</h4></p>
-    <img src="#caras de califiacion?" alt="descripcion foto" class="">
+    <img src="./Imagenes/CalificacionLocal.png" alt="Calificacion del local" width="350px">
 
     <table id="tableCalificacion" class="alineacionInicio">
       <tbody>
@@ -568,12 +711,12 @@
     </table>
   </div>
   
-  <input type="button" value="Regresar" id="btnRegresar9" class="button alineacionInicio" style="display:none"> 
+  <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalPersona')"> 
 </main>
 
-<footer>
-  <div class="alineacionInicio " style="display:none">
-    <p><b> Encuentranos en las redes </b></p>
+<footer style="display:block" >
+  <div class="alineacionInicio " id="cabezal">
+    <p ><b><h3> Encuentranos en las redes </h3></b></p>
        <a target="_blank" href="https://es-la.facebook.com/" class="redes">
           <img class="redes" src="./Imagenes/facebook.png" alt="Facebook">
        </a>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--que significa esto?-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="./css/Index.css">
+        <script type="text/javascript" src="./js/DataPersona.js"></script>
+        <script type="text/javascript" src="./js/DataLocal.js"></script>
+        <script type="text/javascript" src="./js/Prueba.js"></script>
+        <title>Obligatorio P1</title>
+    </head>
+
+
+    <body>
+        <!-- F01– Registrarse en la aplicación -->
+        <main class="seleccionRegistro" style="display:block">
+
+            <div id="idSeleccionRegistro" class="alineacionInicio">
+        
+            <h1>Registro de Nuevo Usuario</h1> <br>
+            <h2>Bienvenido</h2>
+        
+            <form id="formularioRegistro">    
+                
+                <label for="ctsRegistro">Contraseña</label>
+                <img id='infoContraseñaRegistro' src="/Imagenes/iconoInformacion.png" width="20px">
+        
+                <input id="ctsRegistro" name="ctsRegistro" placeholder="Contraseña"> <br>
+                
+                <div id="msjCtsRegistro" style="display:block">  
+                <h3>La contraseña debe contener al menos :</h3>
+                <p id="letraMin" class= "no">1 Minúscula</p>
+                <p id="letraMay" class= "no">1 Mayúscula </p>
+                <p id="num" class= "no">1 Número </p>
+                <p id="largoMin" class= "no">Mínimo 6 Caracteres</p>
+                <p id="largoMax" class= "no">Maximo 12 Caracteres</p><br/>
+                </div>
+        
+                <p>Al <i> <b> Confirmar </i> </b>Ud.<a href="#" target="_blanck" >Acepta Terminos y condiciones</a></p><br><br/>
+                <!--aca lo vincularía a un pdf-->
+                <input type="submit" id= "btnRegistro" value="Confirmar" class="button alineacionInicio btnRegistro"/><br/>
+                <input type="button" id= "btnRegresar" value="Regresar" class="button btnRegresar alineacionInicio"/>
+            </form>
+            </div>
+        </main>
+    </body>
+</html>
