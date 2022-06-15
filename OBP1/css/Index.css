@@ -1,5 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap");
 
+/*Estilo letra body y centrado en mensajes de alerta*/
+body {
+  font-size: large;
+}
+
+p {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.swal-text {
+  text-align: center;
+}
+
 /*Alineacion de contenedores Inicio y Registro */
 .alineacionInicio {
   margin-left: auto;
@@ -17,8 +31,7 @@
   text-align: right;
 }
 
-#nombreUsuario
-{
+#nombreUsuario {
   margin-left: auto;
   margin-right: auto;
   padding-left: 500px;
@@ -26,10 +39,13 @@
   text-align: right;
 }
 
-/*Menu de acceso*/
-#navPrincipal{
+.contendor {
   display: flex;
-  align-items:center;
+}
+/*Menu de acceso*/
+#navPrincipal {
+  display: flex;
+  align-items: center;
 }
 
 #navPrincipal,
@@ -66,8 +82,8 @@
   padding: 5px;
 }
 
-footer{
-margin-top: 100px;
+footer {
+  margin-top: 100px;
 }
 
 /* Estilo inputs */
@@ -83,13 +99,39 @@ input {
   position: relative;
 }
 
-input[type=number] { 
-  -moz-appearance:textfield;
-  width: 80px; 
+input[type="number"] {
+  -moz-appearance: textfield;
+  width: 80px;
   margin-left: 20px;
+  color: black;
+  text-align: center;
+  font-variant: small-caps;
+  font-size: small;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: 10px;
+  background-color: aliceblue;
+  border-radius: 8px;
+  border-color: #14e938;
 }
 
-/* Estilo botoningreso */
+.inputText {
+  -moz-appearance: textfield;
+  width: 350px;
+  margin-left: 20px;
+  color: black;
+  text-align: center;
+  font-variant: small-caps;
+  font-size: small;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: 10px;
+  background-color: aliceblue;
+  border-radius: 8px;
+  border-color: #14e938;
+}
+
+/* Estilo boton ingreso */
 input[type="submit"] {
   background-color: #c8f3cf;
   color: black;
@@ -97,11 +139,12 @@ input[type="submit"] {
 
 /* Estilo botones */
 .button {
-  background-color:  #c8f3cf;
+  background-color: #c8f3cf;
   color: black;
   cursor: pointer;
   font-weight: 600;
-} 
+  margin-top: 50px;
+}
 
 .swal-button {
   padding: 7px 19px;
@@ -112,10 +155,34 @@ input[type="submit"] {
   font-size: 12px;
   border: 1px solid #3e549a;
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
-  color:#000000;
+  color: #000000;
 }
 
-/*aca estilo para select y para unos cosos ahi de ir a cancelacion o listado*/
+.button_cancelacion {
+  background-color: white;
+  border-color: #c8f3cf;
+  border-radius: 20px;
+  padding: 10px;
+  color: black;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: -20px;
+}
+/*aca estilo para select y para unos cosos ahi de ir a cancelacion o listado y selects*/
+select {
+  margin-left: 20px;
+  color: black;
+  text-align: center;
+  font-variant: small-caps;
+  font-size: small;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: 10px;
+  background-color: aliceblue;
+  border-radius: 8px;
+  border-color: #14e938;
+  width: 200px;
+}
 
 /* Letra Verde cumplis roja no cumplis con las condiciones */
 .si {
@@ -126,9 +193,38 @@ input[type="submit"] {
   color: red;
 }
 
-/* Fondo de los formularios asi los vemos mas claro */
+/* Fondo tablas*/
+#tableReservaPersona,
+#tableCambioReserva,
+#tableEstadisticasLocal,
+#comparacionLocales,
+#tableEstadisticasPersona {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  background-color: #e8f3ef;
+  border-radius: 20px;
+}
 
-/*
 table {
-  background-color: #89eac6;
+  margin: 0 auto;
+}
+
+.tdAncha {
+  width: 250px;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.tdCorta {
+  width: 100px;
+}
+
+.tdMedia {
+  width: 200px;
+}
+
+#tableReservaPersona {
+  width: 800px;
 }
