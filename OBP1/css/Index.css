@@ -1,19 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap");
-
 /*Estilo letra body y centrado en mensajes de alerta*/
 body {
   font-size: large;
 }
-
+hr {
+  height: 5px;
+  color: #baf5c4;
+  border-width: 5px;
+  width: 1200px;
+  border-radius: 20px;
+  background-color: #060606;
+}
+#hrbottom {
+  margin-top: 50px;
+}
+#hrtop {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
 p {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-
 .swal-text {
   text-align: center;
 }
-
 /*Alineacion de contenedores Inicio y Registro */
 .alineacionInicio {
   margin-left: auto;
@@ -22,7 +33,6 @@ p {
   width: auto;
   text-align: center;
 }
-
 .alineacionHeader {
   margin-left: auto;
   margin-right: auto;
@@ -30,7 +40,6 @@ p {
   width: 800px;
   text-align: right;
 }
-
 #nombreUsuario {
   margin-left: auto;
   margin-right: auto;
@@ -38,7 +47,6 @@ p {
   display: table;
   text-align: right;
 }
-
 .contendor {
   display: flex;
 }
@@ -47,7 +55,6 @@ p {
   display: flex;
   align-items: center;
 }
-
 #navPrincipal,
 #navPrincipal li {
   font-family: "Roboto Flex", sans-serif;
@@ -57,7 +64,6 @@ p {
   float: left;
   max-width: fit-content;
 }
-
 #navPrincipal a {
   color: #000000;
   cursor: pointer;
@@ -66,13 +72,11 @@ p {
   font-size: 14px;
   border-radius: 10px;
 }
-
 #cabezal {
   background-color: #c8f3cf;
   border-radius: 20px;
   padding: 10px;
 }
-
 /*Footer*/
 .redes,
 .redes img {
@@ -81,11 +85,9 @@ p {
   text-decoration: none;
   padding: 5px;
 }
-
 footer {
-  margin-top: 100px;
+  margin-top: 50px;
 }
-
 /* Estilo inputs */
 input {
   width: 80%;
@@ -98,7 +100,6 @@ input {
   vertical-align: middle;
   position: relative;
 }
-
 input[type="number"] {
   -moz-appearance: textfield;
   width: 80px;
@@ -114,7 +115,11 @@ input[type="number"] {
   border-radius: 8px;
   border-color: #14e938;
 }
-
+#ctsIngreso,
+#txtBusquedaUSU,
+#txtNamLastNam,
+#txtUserName,
+#ctsRegistro,
 .inputText {
   -moz-appearance: textfield;
   width: 350px;
@@ -130,13 +135,11 @@ input[type="number"] {
   border-radius: 8px;
   border-color: #14e938;
 }
-
 /* Estilo boton ingreso */
 input[type="submit"] {
   background-color: #c8f3cf;
   color: black;
 }
-
 /* Estilo botones */
 .button {
   background-color: #c8f3cf;
@@ -145,7 +148,6 @@ input[type="submit"] {
   font-weight: 600;
   margin-top: 50px;
 }
-
 .swal-button {
   padding: 7px 19px;
   margin-left: 0 auto;
@@ -157,7 +159,6 @@ input[type="submit"] {
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
   color: #000000;
 }
-
 .button_cancelacion {
   background-color: white;
   border-color: #c8f3cf;
@@ -167,6 +168,15 @@ input[type="submit"] {
   cursor: pointer;
   font-weight: 600;
   margin-top: -20px;
+}
+.btnCancelacionReserva {
+  border-color: #f81e1e;
+  border-width: 2px;
+}
+.btnCalificarReserva {
+  border-color: #8183d8;
+  border-width: 2px;
+  margin-right: 40px;
 }
 /*aca estilo para select y para unos cosos ahi de ir a cancelacion o listado y selects*/
 select {
@@ -183,17 +193,24 @@ select {
   border-color: #14e938;
   width: 200px;
 }
-
+.selectCalificacion {
+  border-color: #8183d8;
+  border-width: 2px;
+  margin-right: 40px;
+  width: 150px;
+  font-size: larger;
+}
 /* Letra Verde cumplis roja no cumplis con las condiciones */
 .si {
   color: green;
 }
-
 .no {
   color: red;
 }
-
 /* Fondo tablas*/
+#tableAimprimirLocal,
+#tableCalificacion,
+#tableCancelacion,
 #tableReservaPersona,
 #tableCambioReserva,
 #tableEstadisticasLocal,
@@ -205,26 +222,32 @@ select {
   background-color: #e8f3ef;
   border-radius: 20px;
 }
-
 table {
   margin: 0 auto;
 }
-
 .tdAncha {
   width: 250px;
   margin: 0;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-
 .tdCorta {
   width: 100px;
 }
-
 .tdMedia {
   width: 200px;
 }
-
+.tdMuyAncha {
+  width: 350px;
+}
+#comparacionLocales,
+#tableCancelacion,
 #tableReservaPersona {
   width: 800px;
+}
+#tableCancelacion {
+  width: 950px;
+}
+#tableCalificacion {
+  width: 1000px;
 }

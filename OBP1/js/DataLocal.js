@@ -7,7 +7,7 @@ const usuariosLocal = [
     contraseña: "1",
     habilitado: true,
     cuposMaximos: 30,
-    cuposDisponibles: 25, //la direrencia entre maximos y los reservados en estado pendiente
+    cuposDisponibles: 22, //la direrencia entre maximos y los reservados en estado pendiente
     calificacion: 0,
     tipo: "local",
     rubro: "restaurant",
@@ -21,7 +21,7 @@ const usuariosLocal = [
     contraseña: "1",
     habilitado: true,
     cuposMaximos: 45,
-    cuposDisponibles: 43, //la direrencia entre maximos y los reservados en estado pendiente
+    cuposDisponibles: 43,
     calificacion: 0,
     tipo: "local",
     rubro: "restaurant",
@@ -32,10 +32,10 @@ const usuariosLocal = [
     id: "3",
     nombreCompleto: "Lisa",
     usuario: "lisa",
-    contraseña: "Lisa_6",
+    contraseña: "1",
     habilitado: true,
     cuposMaximos: 25,
-    cuposDisponibles: 25, //la direrencia entre maximos y los reservados en estado pendiente
+    cuposDisponibles: 25,
     calificacion: 0,
     tipo: "local",
     rubro: "restaurant",
@@ -46,10 +46,10 @@ const usuariosLocal = [
     id: "4",
     nombreCompleto: "El Galpon",
     usuario: "elgalpon",
-    contraseña: "Elgalpon6",
+    contraseña: "1",
     habilitado: true,
     cuposMaximos: 200,
-    cuposDisponibles: 200, //la direrencia entre maximos y los reservados en estado pendiente
+    cuposDisponibles: 200,
     calificacion: 0,
     tipo: "local",
     rubro: "teatro",
@@ -60,10 +60,10 @@ const usuariosLocal = [
     id: "5",
     nombreCompleto: "El Tinglado",
     usuario: "eltinglado",
-    contraseña: "Eltinglado6",
+    contraseña: "1",
     habilitado: true,
     cuposMaximos: 157,
-    cuposDisponibles: 157, //la direrencia entre maximos y los reservados en estado pendiente
+    cuposDisponibles: 157,
     calificacion: 0,
     tipo: "local",
     rubro: "teatro",
@@ -72,26 +72,12 @@ const usuariosLocal = [
   },
   {
     id: "6",
-    nombreCompleto: "Teatro Del Anglo",
-    usuario: "delanglo",
-    contraseña: "Delanglo6",
-    habilitado: true,
-    cuposMaximos: 142,
-    cuposDisponibles: 142, //la direrencia entre maximos y los reservados en estado pendiente
-    calificacion: 0,
-    tipo: "local",
-    rubro: "teatro",
-    imagen:
-      '<img src="./Imagenes/Teatro 3.jpg" alt="Teatro del Anglo foto" style="width:200px">',
-  },
-  {
-    id: "7",
     nombreCompleto: "Museo Del Prado",
     usuario: "delprado",
-    contraseña: "Delprado6",
+    contraseña: "1",
     habilitado: true,
     cuposMaximos: 100,
-    cuposDisponibles: 100, //la direrencia entre maximos y los reservados en estado pendiente
+    cuposDisponibles: 98,
     calificacion: 0,
     tipo: "local",
     rubro: "museo",
@@ -99,41 +85,13 @@ const usuariosLocal = [
       '<img src="./Imagenes/Museo 1.jpg" alt="Museo del Prado foto" style="width:200px">',
   },
   {
-    id: "8",
-    nombreCompleto: "Museo Contemporaneo",
-    usuario: "contemporaneo",
-    contraseña: "Contemporaneo6",
-    habilitado: true,
-    cuposMaximos: 53,
-    cuposDisponibles: 53, //la direrencia entre maximos y los reservados en estado pendiente
-    calificacion: 0,
-    tipo: "local",
-    rubro: "museo",
-    imagen:
-      '<img src="./Imagenes/Museo 2.jpg" alt="Museo Contemporaneo foto" style="width:200px">',
-  },
-  {
-    id: "9",
-    nombreCompleto: "Museo Frio",
-    usuario: "frio",
-    contraseña: "Frio6",
-    habilitado: true,
-    cuposMaximos: 75,
-    cuposDisponibles: 75, //la direrencia entre maximos y los reservados en estado pendiente
-    calificacion: 0,
-    tipo: "local",
-    rubro: "museo",
-    imagen:
-      '<img src="./Imagenes/Museo 3.jpg" alt="Museo Frio foto" style="width:200px">',
-  },
-  {
-    id: "10",
+    id: "7",
     nombreCompleto: "Louvre",
     usuario: "louvre",
-    contraseña: "Louvre6",
+    contraseña: "1",
     habilitado: true,
     cuposMaximos: 159,
-    cuposDisponibles: 149, //la direrencia entre maximos y los reservados en estado pendiente
+    cuposDisponibles: 146,
     calificacion: 0,
     tipo: "local",
     rubro: "museo",
@@ -146,7 +104,6 @@ const reservas = [
   {
     id: 1,
     nombreCompletoLocal: "Lo de Pepe",
-    //evaluaria sacar el nombre completo del local ya que esta el id, ver si no afecta funcionalidad
     idLocal: 1,
     nombreCompletoPersona: "Emiliano Lujan",
     cupos: 2,
@@ -165,7 +122,7 @@ const reservas = [
   {
     id: 3,
     nombreCompletoLocal: "Louvre",
-    idLocal: 10,
+    idLocal: 7,
     nombreCompletoPersona: "Jose Diaz",
     rubro: "museo",
     cupos: 10,
@@ -206,7 +163,7 @@ const reservas = [
     nombreCompletoPersona: "Gustavo Brañas",
     cupos: 3,
     status: "FINALIZADO",
-    calificacion: 3,
+    calificacion: 0,
   },
   {
     id: 8,
@@ -215,12 +172,12 @@ const reservas = [
     nombreCompletoPersona: "Gustavo Brañas",
     cupos: 3,
     status: "FINALIZADO",
-    calificacion: 4,
+    calificacion: 0,
   },
   {
     id: 9,
     nombreCompletoLocal: "Louvre",
-    idLocal: 10,
+    idLocal: 7,
     nombreCompletoPersona: "Gustavo Brañas",
     cupos: 3,
     status: "PENDIENTE",
@@ -239,7 +196,7 @@ const reservas = [
     id: 11,
     nombreCompletoLocal: "Lo de Pepe",
     idLocal: 1,
-    nombreCompletoPersona: "Gustavo Brañas",
+    nombreCompletoPersona: "Mailen Arleo",
     cupos: 3,
     status: "PENDIENTE",
     calificacion: 0,
@@ -247,60 +204,76 @@ const reservas = [
   {
     id: 12,
     nombreCompletoLocal: "Louvre",
-    idLocal: 10,
+    idLocal: 7,
     nombreCompletoPersona: "Jose Diaz",
     rubro: "museo",
     cupos: 50,
     status: "FINALIZADO",
-    calificacion: 0,
+    calificacion: 2,
   },
   {
     id: 13,
     nombreCompletoLocal: "Louvre",
-    idLocal: 10,
-    nombreCompletoPersona: "Jose Diaz",
+    idLocal: 7,
+    nombreCompletoPersona: "Mailen Arleo",
     rubro: "museo",
     cupos: 50,
     status: "FINALIZADO",
-    calificacion: 0,
-  },
-  {
-    id: 13,
-    nombreCompletoLocal: "Lo de Pepe",
-    idLocal: 1,
-    nombreCompletoPersona: "Jose Diaz",
-    cupos: 15,
-    status: "FINALIZADO",
-    calificacion: 5,
+    calificacion: 3,
   },
   {
     id: 14,
-    nombreCompletoLocal: "Garage Burguer",
-    idLocal: 2,
-    nombreCompletoPersona: "Emiliano Lujan",
+    nombreCompletoLocal: "Lisa",
+    idLocal: 3,
+    nombreCompletoPersona: "Jose Diaz",
+    cupos: 15,
+    status: "FINALIZADO",
+    calificacion: 0,
+  },
+  {
+    id: 15,
+    nombreCompletoLocal: "El Galpon",
+    idLocal: 4,
+    nombreCompletoPersona: "Joaco Kam",
     cupos: 2,
     status: "FINALIZADO",
+    calificacion: 4,
+  },
+  {
+    id: 16,
+    nombreCompletoLocal: "Museo Del Prado",
+    idLocal: 6,
+    nombreCompletoPersona: "Joaco Kam",
+    cupos: 2,
+    status: "PENDIENTE",
     calificacion: 0,
   },
   {
-    id: 14,
-    nombreCompletoLocal: "Teatro Del Anglo",
+    id: 17,
+    nombreCompletoLocal: "Lo de Pepe",
+    idLocal: 1,
+    nombreCompletoPersona: "Mailen Arleo",
+    cupos: 3,
+    status: "CANCELADO",
+    calificacion: 0,
+  },
+  {
+    id: 18,
+    nombreCompletoLocal: "Museo Del Prado",
     idLocal: 6,
-    nombreCompletoPersona: "Jose Diaz",
-    cupos: 15,
-    status: "PENDIENTE",
-    calificacion: 5,
+    nombreCompletoPersona: "Joaco Kam",
+    cupos: 3,
+    status: "CANCELADO",
+    calificacion: 0,
   },
 ];
 
 class Reservas {
-  constructor(nombreLocal, rubro, nombrePersona, cuposSeleccionados) {
+  constructor(nombreLocal, idLocal, nombrePersona, cuposSeleccionados) {
     this.id = asignacionIdReservas();
-    //evaluaria sacar el nombre completo del local ya que esta el id, ver si no afecta funcionalidad
     this.nombreCompletoLocal = nombreLocal;
-    this.idLocal = Number("id que identifica al local");
+    this.idLocal = Number(idLocal);
     //por error se trabajo con string los id locales, se soluciona convirtiendo a number los mismos
-    this.rubro = rubro;
     this.nombreCompletoPersona = nombrePersona;
     this.cupos = cuposSeleccionados;
     this.status = "PENDIENTE";

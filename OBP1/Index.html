@@ -4,18 +4,19 @@
     <meta charset="UTF-8"><!--Expresa la codificacion de caracteres-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Expresa como se maneja la pag en cuanto a 
     reducciones de ancho-->
+    <link rel="shortcut icon" href="./Imagenes/LogoTureservaWEB.png" />
     <link rel="stylesheet" href="./css/Index.css">
     <script type="text/javascript" src="./js/DataPersona.js"></script>
     <script type="text/javascript" src="./js/DataLocal.js"></script>
     <script type="text/javascript" src="./js/Index.js"></script> 
     <script type="text/javascript" src="./js/Funciones.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  <!--libreria que permite personalizar el alert--->
-    <title>Obligatorio P1</title>
+    <title>TUreservaWEB</title>
 </head>
 
 <body> 
 
-<header >
+<header>
   <div class="alineacionHeader header " style="display:none">
     <p id="nombreUsuario" style="font-size:large; letter-spacing:1px">Usuario Activo</p>
     <figure class="alineacionInicio">
@@ -26,118 +27,111 @@
 
 <!-- Menu principal -->
 <main class="menuPrincipal">
-    <div class='menuPrincipalPersona' style="display:none">
-      <div id="cabezal" class="alineacionInicio">
-        <ul id="navPrincipal">
+  <div class='menuPrincipalPersona' style="display:none">
+    <div id="cabezal" class="alineacionInicio">
+      <ul id="navPrincipal">
         <li>
           <a id="irReservacion" onclick="modificarMenu('irReservacion')">Reservación de locales</a>
         </li>
         <li>
-          <a id="irCancelacion" onclick="modificarMenu('irCancelacion')">Cancelación y Reservaciones pendientes</a>
+        <a id="irCancelacion" onclick="modificarMenu('irCancelacion')">Cancelación y Reservaciones pendientes</a>
         </li>
         <li>
-          <a id="irCalificacion" onclick="modificarMenu('irCalificacion')">Calificación de locales</a>
+        <a id="irCalificacion" onclick="modificarMenu('irCalificacion')">Calificación de locales</a>
         </li>
         <li>
           <a id="irEstadisticasPersona" onclick="modificarMenu('irEstadisticasPersona')">Estadísticas</a>
         </li>
         <li>
           <a class="irSalir" onclick="onClickSalir()">Salir</a> 
-        </ul>
-      </div><br/><br/>
-    </div>
-    <div class="menuPrincipalLocal" style="display:none">
-      <div id="cabezal" class="alineacionInicio">
-        <ul id="navPrincipal">
-          <li>
-            <a id="irHabilitacion" onclick="modificarMenu('irHabilitacion')">Habilitación de reservas</a>
-          </li>
-          <li>
-            <a id="irEstadoReservas" onclick="modificarMenu('irEstadoReservas')">Estado de reservas</a>
-          </li>
-          <li>
-            <a id="irCupos" onclick="modificarMenu('irCupos')">Modificación de cupos</a>
-          </li>
-          <li>
-            <a id="irEstadisticasLocal" onclick="modificarMenu('irEstadisticasLocal')">Estadísticas</a>
-          </li>
-          <li>
-            <a class="irSalir" onclick="onClickSalir()">Salir</a>
-          </li>
-        </ul>
-      </div><br/><br/>
-    </div>
-</main>
-
-<!-- F02– Ingreso a la aplicación -->
-<main class="seleccionIngresar" style="display:block" >
-
-  <div id= "idSeleccionIngresar" class="alineacionInicio">
-
-    <h1>Ingreso</h1><br/>
-    <form>
-      <label for="txtBusquedaUSU"><b>Nombre de Usuario</b></label>
-      <input type="text" placeholder="Ingresar Nombre de Usuario" id="txtBusquedaUSU"><br/><br/>
-      <label for="ctsIngreso"><b>Contraseña</b></label>
-      <input type="password" placeholder="Ingresar Contraseña" name="ctsIngreso" id="ctsIngreso"><br/><br/>
-    </form>
-
-    <input class="button alineacionInicio" type="button" value="Ingresar" id="btnIngresar" ><br/><br/>
-
-      <a href="#" id="redireccionaAregistrar">¿Aún no formas parte de nuestra comunidad? ¡Registrate ahora!</a><br/><br/> 
-      <a href="#" >Link para empresas</a><br/><br/>
+        </li>
+      </ul>
+    </div><br/><br/>
+  </div>
+  <div class="menuPrincipalLocal" style="display:none">
+    <div id="cabezal" class="alineacionInicio">
+      <ul id="navPrincipal">
+        <li>
+          <a id="irHabilitacion" onclick="modificarMenu('irHabilitacion')">Habilitación de reservas</a>
+        </li>
+        <li>
+          <a id="irEstadoReservas" onclick="modificarMenu('irEstadoReservas')">Estado de reservas</a>
+        </li>
+        <li>
+          <a id="irCupos" onclick="modificarMenu('irCupos')">Modificación de cupos</a>
+        </li>
+        <li>
+          <a id="irEstadisticasLocal" onclick="modificarMenu('irEstadisticasLocal')">Estadísticas</a>
+        </li>
+        <li>
+          <a class="irSalir" onclick="onClickSalir()">Salir</a>
+        </li>
+      </ul>
+    </div><br/><br/>
   </div>
 </main>
 
 <!-- F01– Registrarse en la aplicación -->
 <main class="seleccionRegistro" style="display:none">
-
   <div id="idSeleccionRegistro" class="alineacionInicio">
-
-    <h1>Registro de Nuevo Usuario</h1> <br>
+    <h1>Registro de Nuevo Usuario</h1><br>
     <h2>Bienvenido</h2>
-
     <form id="formularioRegistro">    
       <label for="txtNamLastNam">Nombre y Apellido</label>
-      <input type="text" placeholder="Juan Diaz" name='txtNamLastNam' id="txtNamLastNam"><br/><br/>
-
+      <input style="margin-right:40px" type="text" placeholder="Juan Diaz" name='txtNamLastNam' id="txtNamLastNam"><br/><br/>
       <label for="txtUserName">Nombre de Usuario</label>
       <img id='infoNombreUsuario' src="/Imagenes/iconoInformacion.png" width="20px" 
-      title="Ingrese nombre de usuario sin espacios. Este nombre es el que utilizará en su ingreso">
-      <input type="text" placeholder="juancitodiaz" id="txtUserName" name="txtUserName"><br/>
-      
+        title="Ingrese nombre de usuario sin espacios. Este nombre es el que utilizará en su ingreso">
+      <input style="margin-right:60px" type="text" placeholder="juancitodiaz" id="txtUserName" name="txtUserName"><br/><br/>
       <label for="ctsRegistro">Contraseña</label>
       <img id='infoContraseñaRegistro' src="/Imagenes/iconoInformacion.png" width="20px" 
-      title="La contraseña debe de contener entre 6 y 12 caracteres, contar con al menos un número, una mayúscula y una minúscula">
-
-      <input id="ctsRegistro" name="ctsRegistro" placeholder="Contraseña" type='password' onkeyup="validacionContraseña(document.querySelector('#ctsRegistro').value)"> <br>
+        title="La contraseña debe de contener entre 6 y 12 caracteres, contar con al menos un número, una mayúscula y una minúscula">
+      <input id="ctsRegistro" name="ctsRegistro" placeholder="Contraseña" type='password' onkeyup="validacionContraseña(document.querySelector('#ctsRegistro').value)"></br></br>
     </form>
-      <div id="msjCtsRegistro" style="display:block">  
-        <h3>La contraseña debe contener al menos :</h3>
-        <p id="letraMin" class= "no">1 Minúscula</p>
-        <p id="letraMay" class= "no">1 Mayúscula </p>
-        <p id="num" class= "no">1 Número </p>
-        <p id="largoMin" class= "no">Mínimo 6 Caracteres</p>
-        <p id="largoMax" class= "no">Maximo 12 Caracteres</p><br/>
-      </div>
+    <div id="msjCtsRegistro" style="display:block">  
+      <h3>La contraseña debe contener al menos:</h3>
+      <p id="letraMin" class= "no">1 Minúscula</p>
+      <p id="letraMay" class= "no">1 Mayúscula </p>
+      <p id="num" class= "no">1 Número </p>
+      <p id="largoMin" class= "no">Mínimo 6 Caracteres</p>
+      <p id="largoMax" class= "no">Maximo 12 Caracteres</p></br>
+    </div>
+    <p>Al <i> <b> Confirmar </i> </b>Ud.<a href="./Imagenes/terminosYcondiciones.pdf" target="_blanck" >Acepta Terminos y condiciones</a></p>
+    <table>
+      <td><input type="button" id= "btnRegresar" value="Regresar" class="button btnRegresar alineacionInicio" onclick='retornoAingreso()'/></td>
+      <td style="padding-left:60px"><input type="submit" id= "btnRegistro" value="Confirmar" class="button alineacionInicio btnRegistro"/></td>
+    </table>
+  </div>
+</main>
 
-      <p>Al <i> <b> Confirmar </i> </b>Ud.<a href="./Imagenes/terminosYcondiciones.pdf" target="_blanck" >Acepta Terminos y condiciones</a></p><br><br/>
-      <input type="submit" id= "btnRegistro" value="Confirmar" class="button alineacionInicio btnRegistro"/><br/>
-      <input type="button" id= "btnRegresar" value="Regresar" class="button btnRegresar alineacionInicio" onclick='retornoAingreso()'/>
-    
+<!-- F02– Ingreso a la aplicación -->
+<main class="seleccionIngresar" style="display:block" >
+  <div id= "idSeleccionIngresar" class="alineacionInicio">
+    <h1>Ingreso</h1><br/>
+    <form>
+      <label for="txtBusquedaUSU"><b>Nombre de Usuario</b></label>
+      <input style="margin-right:62px" type="text" placeholder="Ingresar Nombre de Usuario" id="txtBusquedaUSU"><br/><br/>
+      <label for="ctsIngreso"><b>Contraseña</b></label>
+      <input type="password" placeholder="Ingresar Contraseña" name="ctsIngreso" id="ctsIngreso"><br/><br/>
+    </form>
+    <input class="button alineacionInicio" type="button" value="Ingresar" id="btnIngresar" ><br/><br/>
+    <a href="#" id="redireccionaAregistrar">¿Aún no formas parte de nuestra comunidad? ¡Registrate ahora!</a><br/><br/> 
+    <a href="#" >Link para empresas</a><br/><br/>
   </div>
 </main>
 
 <!-- Pagina principal -->
 <main class="paginaPrincipal">
   <div class='alineacionInicio paginaPrincipalPersona' id="paginaPrincipalPersona" style="display:none">
-    <h1><u>NUESTROS SERVICIOS</u></h1><br/>
+    <h1><u>NUESTROS SERVICIOS</u></h1>
     <div>
+      <hr id="hrtop">
       <figure id="iconoRestaurant">
       <img class='logo' width="800px"src="./Imagenes/Restaurant logo.png" alt="Restaurant" >
-      </figure> <br/>  
+      </figure> 
+      <hr id="hrbottom"> </br></br>
       <article>
-        <div id="imagen_impar">
+      <div id="imagen_impar">
         <figure>
           <h2>
           <i>Lo de Pepe</i>
@@ -146,13 +140,14 @@
         </figure>
         <div>
           <p><h4>
-          Lo de Pepe, inaugurado en el 2002 se ha consolidado como uno de los referentes de la gastronomía de Montevideo. <br/>Su ambiente cálido y distendido es perfecto para turistas, políticos, ejecutivos y personalidades de la cultura del ámbito local e internacional.
-          <br/>Nuestra pasiónl generar experiencias memorables cuidando al máximo cada uno de los detalles, logrando así que nuestros clientes se conviertan en amigos de la casa.
-          <br/>Los esperamos en nuestro local ubicado en Punta Carretas.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis ac enim nec elementum.</br>
+            Mauris porttitor odio ut nunc tincidunt posuere. Pellentesque habitant morbi tristique senectus
+            et netus et malesuada fames ac turpis egestas.</br> Sed fermentum volutpat nunc gravida pretium.
+            In id massa mi. Sed nec massa purus. Nullam bibendum justo eget odio vestibulum iaculis.
           </h4></p>
         </div>
       </div>
-      <div >
+      <div>
         <figure>
           <h2><br/><br/>
           <i>Garage Burger</i>
@@ -161,9 +156,10 @@
         </figure>
         <div>
           <p><h4>
-          Garage Burguer, inaugurado en el 2002 se ha consolidado como uno de los referentes de la gastronomía de Montevideo. <br/>Su ambiente cálido y distendido es perfecto para turistas, políticos, ejecutivos y personalidades de la cultura del ámbito local e internacional.
-          <br/>Nuestra pasiónl generar experiencias memorables cuidando al máximo cada uno de los detalles, logrando así que nuestros clientes se conviertan en amigos de la casa.
-          <br/>Los esperamos en nuestro local ubicado en Punta Carretas.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis ac enim nec elementum.</br>
+            Mauris porttitor odio ut nunc tincidunt posuere. Pellentesque habitant morbi tristique senectus
+            et netus et malesuada fames ac turpis egestas.</br> Sed fermentum volutpat nunc gravida pretium.
+            In id massa mi. Sed nec massa purus. Nullam bibendum justo eget odio vestibulum iaculis.
           </h4></p>
         </div>
       </div>
@@ -175,17 +171,20 @@
         </figure>
         <div>
           <p><h4>
-          Lisa, inaugurado en el 2002 se ha consolidado como uno de los referentes de la gastronomía de Montevideo. <br/>Su ambiente cálido y distendido es perfecto para turistas, políticos, ejecutivos y personalidades de la cultura del ámbito local e internacional.
-          <br/>Nuestra pasiónl generar experiencias memorables cuidando al máximo cada uno de los detalles, logrando así que nuestros clientes se conviertan en amigos de la casa.
-          <br/>Los esperamos en nuestro local ubicado en Punta Carretas.
-          </h4></p><br/><br/>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis ac enim nec elementum.</br>
+            Mauris porttitor odio ut nunc tincidunt posuere. Pellentesque habitant morbi tristique senectus
+            et netus et malesuada fames ac turpis egestas.</br> Sed fermentum volutpat nunc gravida pretium.
+            In id massa mi. Sed nec massa purus. Nullam bibendum justo eget odio vestibulum iaculis.
+          </h4></p>
         </div>
       </article>  
     </div>
+    <hr id="hrtop">
     <div>
       <figure id="iconoTeatro">
-      <img class='logo' width="800px"src="./Imagenes/Teatro logo.png" alt="Restaurant" >
-      </figure> <br/>  
+      <img class='logo' width="800px"src="./Imagenes/Teatro logo.png" alt="Teatro" >
+      </figure> 
+      <hr id="hrbottom">  </br></br>
       <article>
         <figure>
           <h2>
@@ -195,9 +194,10 @@
         </figure>
         <div>
           <p><h4>
-          A lo largo de sus 72 años de historia, se ha constituido en un centro cultural, situado en la principal avenida de la ciudad de Montevideo, con tres salas teatrales. <br/>
-          Sin ningún tipo de apoyo o subvención estatal permanente, esta Institución, de las más antiguas, conocidas y respetadas en el mundo,<br/> se sostiene gracias al apoyo del público y a los sistemas de Socios de El Galpón y Socio Espectacular.
-          <br/>También ese departamento organiza presentaciones en los barrios de Montevideo y el interior del país.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis ac enim nec elementum.</br>
+            Mauris porttitor odio ut nunc tincidunt posuere. Pellentesque habitant morbi tristique senectus
+            et netus et malesuada fames ac turpis egestas.</br> Sed fermentum volutpat nunc gravida pretium.
+            In id massa mi. Sed nec massa purus. Nullam bibendum justo eget odio vestibulum iaculis.
           </h4></p><br/>
         </div>
         <figure>
@@ -208,30 +208,20 @@
         </figure>
         <div>
           <p><h4>
-          A lo largo de sus 72 años de historia, se ha constituido en un centro cultural, situado en la principal avenida de la ciudad de Montevideo, con tres salas teatrales. <br/>
-          Sin ningún tipo de apoyo o subvención estatal permanente, esta Institución, de las más antiguas, conocidas y respetadas en el mundo,<br/> se sostiene gracias al apoyo del público y a los sistemas de Socios de El Galpón y Socio Espectacular.
-          <br/>También ese departamento organiza presentaciones en los barrios de Montevideo y el interior del país.
-          </h4></p><br/>
-        </div>
-        <figure>
-          <h2>
-          <i>Teatro Del Anglo</i>
-          </h2>
-          <img src="./Imagenes/Teatro 3.jpg" alt="Teatro del Anglo foto">
-        </figure>
-        <div>
-          <p><h4>
-          A lo largo de sus 72 años de historia, se ha constituido en un centro cultural, situado en la principal avenida de la ciudad de Montevideo, con tres salas teatrales. <br/>
-          Sin ningún tipo de apoyo o subvención estatal permanente, esta Institución, de las más antiguas, conocidas y respetadas en el mundo,<br/> se sostiene gracias al apoyo del público y a los sistemas de Socios de El Galpón y Socio Espectacular.
-          <br/>También ese departamento organiza presentaciones en los barrios de Montevideo y el interior del país.
-          </h4></p><br/><br/>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis ac enim nec elementum.</br>
+            Mauris porttitor odio ut nunc tincidunt posuere. Pellentesque habitant morbi tristique senectus
+            et netus et malesuada fames ac turpis egestas.</br> Sed fermentum volutpat nunc gravida pretium.
+            In id massa mi. Sed nec massa purus. Nullam bibendum justo eget odio vestibulum iaculis.
+          </h4></p>
         </div>
       </article>
     </div>
+    <hr id="hrtop">
     <div>
       <figure id="iconoMuseo">
       <img class='logo' width="850px"src="./Imagenes/Museo logo.png" alt="Museo" >
-      </figure> <br/>  
+      </figure> 
+      <hr id="hrbottom"> </br></br>
       <article>
         <figure>
           <h2>
@@ -241,35 +231,10 @@
         </figure>
         <div>
           <p><h4>
-          A lo largo de sus 72 años de historia, se ha constituido en un centro cultural, situado en la principal avenida de la ciudad de Montevideo, con tres salas teatrales. <br/>
-          Sin ningún tipo de apoyo o subvención estatal permanente, esta Institución, de las más antiguas, conocidas y respetadas en el mundo,<br/> se sostiene gracias al apoyo del público y a los sistemas de Socios de El Galpón y Socio Espectacular.
-          <br/>También ese departamento organiza presentaciones en los barrios de Montevideo y el interior del país.
-          </h4></p><br/>
-        </div>
-        <figure>
-          <h2>
-          <i>Museo Contemporaneo</i>
-          </h2>
-          <img src="./Imagenes/Museo 2.jpg" alt="Museo Contemporaneo foto">
-        </figure>
-        <div>
-          <p><h4>
-          A lo largo de sus 72 años de historia, se ha constituido en un centro cultural, situado en la principal avenida de la ciudad de Montevideo, con tres salas teatrales. <br/>
-          Sin ningún tipo de apoyo o subvención estatal permanente, esta Institución, de las más antiguas, conocidas y respetadas en el mundo,<br/> se sostiene gracias al apoyo del público y a los sistemas de Socios de El Galpón y Socio Espectacular.
-          <br/>También ese departamento organiza presentaciones en los barrios de Montevideo y el interior del país.
-          </h4></p><br/>
-        </div>
-        <figure>
-          <h2>
-          <i>Museo Frio</i>
-          </h2>
-          <img src="./Imagenes/Museo 3.jpg" alt="Museo Frio foto">
-        </figure>
-        <div>
-          <p><h4>
-          A lo largo de sus 72 años de historia, se ha constituido en un centro cultural, situado en la principal avenida de la ciudad de Montevideo, con tres salas teatrales. <br/>
-          Sin ningún tipo de apoyo o subvención estatal permanente, esta Institución, de las más antiguas, conocidas y respetadas en el mundo,<br/> se sostiene gracias al apoyo del público y a los sistemas de Socios de El Galpón y Socio Espectacular.
-          <br/>También ese departamento organiza presentaciones en los barrios de Montevideo y el interior del país.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis ac enim nec elementum.</br>
+            Mauris porttitor odio ut nunc tincidunt posuere. Pellentesque habitant morbi tristique senectus
+            et netus et malesuada fames ac turpis egestas.</br> Sed fermentum volutpat nunc gravida pretium.
+            In id massa mi. Sed nec massa purus. Nullam bibendum justo eget odio vestibulum iaculis.
           </h4></p><br/>
         </div>
         <figure>
@@ -280,29 +245,30 @@
         </figure>
         <div>
           <p><h4>
-          A lo largo de sus 72 años de historia, se ha constituido en un centro cultural, situado en la principal avenida de la ciudad de Montevideo, con tres salas teatrales. <br/>
-          Sin ningún tipo de apoyo o subvención estatal permanente, esta Institución, de las más antiguas, conocidas y respetadas en el mundo,<br/> se sostiene gracias al apoyo del público y a los sistemas de Socios de El Galpón y Socio Espectacular.
-          <br/>También ese departamento organiza presentaciones en los barrios de Montevideo y el interior del país.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis ac enim nec elementum.</br>
+            Mauris porttitor odio ut nunc tincidunt posuere. Pellentesque habitant morbi tristique senectus
+            et netus et malesuada fames ac turpis egestas.</br> Sed fermentum volutpat nunc gravida pretium.
+            In id massa mi. Sed nec massa purus. Nullam bibendum justo eget odio vestibulum iaculis.
           </h4></p><br/>
         </div>
+    </div>
   </div>
-  </div>
-
   <div class='alineacionInicio paginaPrincipalLocal' id="paginaPrincipalLocal" style="display:none">
     <h1>Estado actual de su local</h1><br/>
     <div>
       <article>
         <figure>
           <img src="./Imagenes/EstadoLocalEstrellas.png" width="250px" alt="Estado actual del local">
-      </figure>
+        </figure>
         <div>
           <h3>
             La calificación del local durante el mes pasado alcanzó
             <br/>el nivel correspondiente a un 81% de clientes <i>Muy Satisfechos </i>.<br/><br/><br/>
-            </h3>  
-      <figure>
-          <img src="./Imagenes/EstadoDelLocal.png" width="550px" alt="Estado actual del local">
-      </figure></div>
+          </h3>  
+          <figure>
+            <img src="./Imagenes/EstadoDelLocal.png" width="550px" alt="Estado actual del local">
+          </figure>
+        </div>
       <div>
         <h3>
           El procentaje de ocupación semanal es de 84%
@@ -328,34 +294,37 @@
     <h1>Estadisticas</h1>  
     <article class="alineacionInicio"> 
       <div id="estadisticasPersona" style="display:block">
-      <table id="tableEstadisticasPersona" class="alineacionInicio" >
-          <thead>
-            <tr>
-                <th class="tdAncha" ></th>
-                <th class="tdCorta" style="padding-left: 40px">RESERVAS CONCRETADAS</th>
-                <th class="tdCorta" style="padding-left: 40px">RESERVAS TOTALES</th>
-                <th class="tdCorta" style="padding-left: 40px">RESERVAS PENDIENTES DEL LOCAL </th>
-                <th class="tdMedia" style="padding-left: 40px; padding-right: 30px;">PORCENTAJE ASOCIADO AL USUARIO**</th>
-            </tr>
-          </thead>
-          <tbody id="tablaEstadisticasPersona">
-          </tbody>  
-      </table>
-      <p style="font-size:small; text-align: start;margin-bottom: 0px">
-        Las reservas definidas en esta sección se vinculan a las realizadas en el local establecido. Solo se muestran aquellos locales donde se cuenta con un histórico de reservas </p>
+        <table id="tableEstadisticasPersona" class="alineacionInicio" >
+            <thead>
+              <tr>
+                  <th class="tdAncha" ></th>
+                  <th class="tdCorta" style="padding-left: 40px">RESERVAS CONCRETADAS</th>
+                  <th class="tdCorta" style="padding-left: 40px">RESERVAS TOTALES*</th>
+                  <th class="tdCorta" style="padding-left: 40px">RESERVAS PENDIENTES DEL LOCAL </th>
+                  <th class="tdMedia" style="padding-left: 40px; padding-right: 30px;">PORCENTAJE ASOCIADO AL USUARIO**</th>
+              </tr>
+            </thead>
+            <tbody id="tablaEstadisticasPersona">
+            </tbody>  
+        </table>
+        <p style="font-size:small; text-align: start;margin-bottom: 0px">
+          Las reservas definidas en esta sección se vinculan a las realizadas en el local establecido. Solo se muestran aquellos locales donde se cuenta con un histórico de reservas 
+        </p>
         <p style="font-size:small; text-align: start;margin-bottom: 0px; margin-top: 0px">
-          *Las reservas Totales consideran las reservas en estado Finalizado, Pendiente o Cancelado</p>  
+          *Las reservas Totales consideran las reservas en estado Finalizado, Pendiente o Cancelado
+        </p>  
         <p style="font-size:small; text-align: start;margin-bottom: 0px; margin-top: 0px">
-            **El porcentaje asociado al usuario considera las reservas en estado Pendiente del usuario y las reservas Pendiente totales 
-            del local</p>
+          **El porcentaje asociado al usuario considera las reservas en estado Pendiente del usuario y las reservas Pendiente totales 
+          del local
+        </p>
       </div>
       <div>
         <p id="mayorCantidadReservas"></p>
       </div>
       <p id="msjSinReservaPersona" style="display:none">
         <img src="./Imagenes/caraTriste.png" style="width: 120px; margin-bottom: 20px;"><br/>
-         <i>No haz realizado ninguna reserva aún.</i>
-       </p>
+        <i>No haz realizado ninguna reserva aún.</i>
+      </p>
     </article>
     <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalPersona')"> 
   </div>
@@ -364,297 +333,205 @@
     <h1> Estadisticas</h1>
     <article class="alineacionInicio">
       <table id="tableEstadisticasLocal" class="alineacionInicio" >
-          <thead>
-            <tr>
-                <th class="tdAncha">Porcentaje de ocupacion</th>
-                <th class="tdAncha">Calificacion del local</th>
-                <th class="tdAncha">Reservas PENDIENTES </th>
-                <th class="tdAncha">Reservas FINALIZADAS</th>
-            </tr>
-          </thead>
-          <tbody id="tablaEstadisticasLocal">
-          </tbody>  
+        <thead>
+          <tr>
+              <th class="tdAncha">Porcentaje de ocupacion</th>
+              <th class="tdAncha">Calificacion del local</th>
+              <th class="tdAncha">Reservas PENDIENTES </th>
+              <th class="tdAncha">Reservas FINALIZADAS</th>
+          </tr>
+        </thead>
+        <tbody id="tablaEstadisticasLocal">
+        </tbody>  
       </table>
-      <p style="font-size:small; text-align: start;margin-bottom: 0px">*El porcentaje de ocupación relaciona los cupos RESERVADOS con los cupos PERMITIDOS </p>
-      <p style="font-size:small; text-align: start; margin-top: 0px; padding-top: 0px">*La calificación posee como máximo 5 estrellas </p>
+      <p style="font-size:small; text-align: start;margin-bottom: 0px">El porcentaje de ocupación relaciona los cupos RESERVADOS con los cupos PERMITIDOS </p>
+      <p style="font-size:small; text-align: start; margin-top: 0px; padding-top: 0px">La calificación posee como máximo 5 estrellas </p>
       <h2 style=" margin-bottom: 60px; margin-top: 60px"> Su local en comparación con los demas registrados en la aplicacion</h2>
       <table id="comparacionLocales" class="alineacionInicio" style="margin-bottom: 10px; padding-right:50px">
         <tbody id="tablaComparacionEstadisticasLocal">
         </tbody>
       </table> 
     </article> 
-    
     <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalLocal')"> 
   </div>
 </main>
 
-<!-- F04 – Habilitar y Deshabilitar disponibilidad. -->
+<!-- F04 – Habilitar y Deshabilitar disponibilidad -->
 <main class="disponibilidad" style="display:none">
   <div class="alineacionInicio" >
   <h1>Disponibilidad de realizar reservas</h1><br/>
-
-  <label>Estado de disponibilidad de reservas</label> 
-  <select id="disponibilidad">
-    <option value="default">SELECCIONE</option>
+  <p id="msjHabilitacionReserva"><i>Actualmente las reservas se encuentran <b>HABILITADAS</b></i></p></br>
+  <div id="modificarHabilitacionConPendientes" style="display:block">
+    <label>Cambiar <i>disponibilidad de reservación</i></label>
+    <img id='infoNombreUsuario' src="/Imagenes/iconoInformacion.png" width="20px" 
+        title="Si usted selecciona DESHABILITADO, no se podrán realizar reservas">
+    <select id="disponibilidad">
+      <option value="default" hidden></option>
       <option value="H">HABILITADO</option> 
-      <option value="D" >DESHABILTADO</option>
-  </select>
-  <input type="submit" id= "btnDisponibilidad" value="Confirmar" class="button alineacionInicio" onclick="modificarDisponibilidad()" style="margin-top: 30px;margin-bottom: 30px"> 
-
-  <p id="msjHabilitacionReserva"><i>Actualmente las reservas se encuentran <b>HABILITADAS</b></i></p>
-
+      <option value="D">DESHABILTADO</option>
+    </select>
+    <input type="submit" id= "btnDisponibilidad" value="Confirmar" class="button alineacionInicio" onclick="modificarDisponibilidad()" style="margin-top: 30px;margin-bottom: 30px"> 
+  </div>
+  <p id="pModificarHabilitacionConPendientes">Se le recuerda que el local cuenta con reservas en estado <b>PENDIENTE </b></br>
+    por lo que <i>cambios en la disponibilidad</i> no están permitidos
+  </p>
   <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalLocal')"> 
-
 </div>
 </main>
 
-<!-- F05 – Cambiar reservas de estado. -->
+<!-- F05 – Cambiar reservas de estado -->
 <main class="cambiarEstadoReservas" style="display:none">
   <div class="alineacionInicio" >
-  <h1>Cambio de estado de las reservas</h1>
-  <h3>A continuacion se muestran las reservas realizadas por clientes</h3>
-  <h3>Mediante este menu, Ud podra cambiar su estado a <i>Finalizado</i></h3><br/><br/>
-
-  <form id="buscadorPersona" style="display:block"> 
-    <input id='busquedaClientes' class='inputText' type="text" placeholder="Nombre de cliente" 
-    title='Ingrese una frase sin espacios. No ingrese NOMBRE y APELLIDO, opte por uno de los dos'/>
-    <table>
-      <body>
-        <td><input style="margin-right:40px;margin-left:30px" type="button" id="btnBusquedaClientes" class="button alineacionInicio " value="Buscar" onclick="buscarPersona()"/></td>
-        <td><input type="button" id="btnBusquedaClientes" class="button alineacionInicio " value="Ver lista de PENDIENTES" onclick="finalizarReservas()"/></td>
-      </body>
+    <h1>Cambio de estado de las reservas</h1>
+    <h3>A continuacion se muestran las reservas realizadas por clientes</h3>
+    <h3>Mediante este menu, Ud podra cambiar su estado a <i>Finalizado</i></h3><br/><br/>
+    <form id="buscadorPersona" style="display:block"> 
+      <input id='busquedaClientes' class='inputText' type="text" placeholder="Nombre de cliente" 
+      title='Ingrese una frase sin espacios. No ingrese NOMBRE y APELLIDO, opte por uno de los dos'/>
+      <table>
+        <tbody>
+          <td><input style="margin-right:40px;margin-left:30px" type="button" id="btnBusquedaClientes" class="button alineacionInicio " value="Buscar" onclick="buscarPersona()"/></td>
+          <td><input type="button" id="btnBusquedaClientes" class="button alineacionInicio " value="Ver lista de PENDIENTES" onclick="finalizarReservas()"/></td>
+        </tbody>
+      </table>
+    </form>
+    <p id="msjSinReserva" style="display:none">
+      <img src="./Imagenes/sinReservasPendientes.png" style="width: 120px; margin-bottom: 20px;"><br/>
+      <i>Actualmente el local no dispone de ninguna reserva en estado <b>PENDIENTE</b></i>
+    </p>
+    <table id="tableCambioReserva" class="lineacionInicio" style="display:none">
+      <thead>
+        <tr>
+          <th style="padding-bottom: 10px"> Nombre del cliente </th>
+          <th style="padding-bottom: 10px"> Cupos </th>
+          <th></th>
+          <th style="padding-bottom: 10px; padding-right: 20px">Estado</th>
+        </tr>
+      </thead>
+      <tbody id="finalizacionReservas">
+        <tr>
+        </tr>
+      </tbody>
     </table>
-  </form>
-  <p id="msjSinReserva" style="display:block">
-   <img src="./Imagenes/sinReservasPendientes.png" style="width: 120px; margin-bottom: 20px;"><br/>
-   
-    <i>Actualmente el local no dispone de ninguna reserva en estado <b>PENDIENTE</b></i>
-  
-  </p>
-  
-  <table id="tableCambioReserva" class="lineacionInicio" style="display:none">
-    <thead>
-      <tr>
-        <th style="padding-bottom: 10px"> Nombre del cliente </th>
-        <th style="padding-bottom: 10px"> Cupos </th>
-        <th></th>
-        <th style="padding-bottom: 10px; padding-right: 20px">Estado</th>
-      </tr>
-    </thead>
-    <tbody id="finalizacionReservas">
-      <tr>
-      </tr>
-    </tbody>
-  </table>
-
-  <br/><br/><input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalLocal')"> 
-
-</div>
+    <br/>
+    <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalLocal')"> 
+  </div>
 </main>
 
 <!-- F06– Modificación cupos de reservas -->
 <main class="modificacionCupos" style="display:none">
   <div id="idmodificacionCupos" class="alineacionInicio">
     <h1>Modificación de cupos de las reservas</h1><br/>
-    <label for="nuevoCupo">Nuevo cupo permitido</label>
-    <input name="nuevoCupo" id="nuevoCupo" type="number" placeholder="Numero"/>
-
-    <i><p id="msjCuposActuales"></p></i>
+    <i><p id="msjCuposActuales"></p></i><br>
+    <div id='mostrarInputCupos' style="display:none">
+      <label for="nuevoCupo">Nuevo cupo permitido</label>
+      <input name="nuevoCupo" id="nuevoCupo" type="number" placeholder="Numero"/>
+      <input type="button" value="Confirmar" id="confirmarCupos" class="button alineacionInicio" onclick="modificacionCupos()">
+    </div>
     <p id="msjErrorCambioCupos"></p>
-
-    <input type="button" value="Confirmar" id="confirmarCupos" class="button alineacionInicio" onclick="modificacionCupos()"><br/>
     <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalLocal')"> 
-
-
   </div>
 </main>
 
 <!-- F07– Realizar solicitudes de reserva -->
 <main class="realizarReservas" style="display:none">   
-  <div id="seleccionReservas" class="alineacionInicio"> 
+  <div id="selectrealizarReservasionReservas" class="alineacionInicio"> 
     <h1>Selección de reservas</h1>
-    <br />
-      
+    <br/>
     <b><label for="seleccionRubro">Seleccione rubro</label></b>
-    <select id="seleccionRubro">
-      <option value="default" selected>Seleccione rubro</option>
+    <select id="realizarReservas" onchange="mostrarPorRubro()">
+      <option value="default" hidden></option>
       <option value="museo">Museo</option>
       <option value="restaurant">Restaurant</option>
-      <option value="Teatro">Teatro</option>
+      <option value="teatro">Teatro</option>
     </select> 
-    <img id='infoSeleccionTipoLocal' src="/Imagenes/iconoInformacion.png" width="20px">
-    <br/><br/>
-
-    <input type="button" value="Regresar" id="btnRegresar7" class="button alineacionInicio" style="display:none"> 
-  
+    <img id='infoSeleccionTipoLocal' src="/Imagenes/iconoInformacion.png" width="20px" 
+    title="Ingrese rubro deseado: Teatro, Museo o Restaurant. Luego se desplegarán los locales disponibles. Recuerde que si Ud. posee una reserva pendiente, ese local no se encontrará habilitado para su selección">
+    <br/><br/>    
   </div>
-
-  <div id="seleccionLocalReservas" class='alineacionInicio' style="display:block">
+  <div id="seleccionLocalReservas" class='alineacionInicio' style="display:none; margin-right:20px">
     <b><label for="seleccionLocal">Seleccione local</label></b>
-    <select id="seleccionLocal">
-      <option value="default">Seleccione</option>
+    <select id="seleccionLocal" onchange="infoLocalAreservar()">
     </select> 
-
-    <p><i>Los locales que se despliegan consideran solo aquellos que poseen cupos disponibles</i></p><br/> <br>
   </div>
-
-  <div id="cuposDelLocal" class='alineacionInicio' style="display:none">
-    <div class="posSeleccionTipoLocal">
-      <div id="imagenReservaTipoLocal"><!--Aqui va imagen del tipo de local seleccionado--></div><br>
-      <table id="localSeleccionadoReserva" class="alineacionInicio">
-        <thead>
-        </thead>
-        <tbody>
-          <tr>
-            <td><!--imagen del rubro--></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><!--imagen del local--></td>
-            <td><!--nombre del local--></td>
-          </tr>
-          <tr>
-            <td><!--msj con cupos disponibles--></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td> <!--seleccione cupos a reservar msj--></td>
-            <td><!--input para escribir cupos--></td>
-          </tr>
-          <tr>
-            <td><!--imagen del rubro--></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <input type="button" id="btnCancelarSeleccionCupos" value="Cancelar" class="button alineacionInicio">
-      <input type="button" id="btnConfirmarSeleccionCupos" value="Confirmar" class="button alineacionInicio">
-    </div>
+  <p class="alineacionInicio" id="imagenRubro" style="padding-top:50px; padding-bottom:0px"></p>
+  <p id="sinOpcionLocal" style="display:none"></p>
+  <div id="localSeleccionado" style="display:none; margin-top:50px; display:block">
+    <table id="tableAimprimirLocal" style="width: 850px"> 
+      <tbody id="tablaAimprimirLocal"></tbody>
+    </table>
   </div>
   <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalPersona')"> 
-
 </main>
 
 <!-- F08– Cancelacion de reservas y F10- Listado de reservas pendientes-->
 <main class="cancelarYlistadoReservas"> 
-
   <div class="cancelacionReservas alineacionInicio" style="display:none"> 
     <button class='button_cancelacion' id="btnIrListadoReservas" onclick="modificarMenu('irListadoReservas')" style="margin-left: 550px;">Ir a Listado de reservas pendientes</button>
-
     <h1>Cancelación de reservas</h1>
-    
     <h4>A continuación se muestran las reservas posibles de ser canceladas</h4><br>
-  
-    <table id="tableCancelacion" class="alineacionInicio">
-      <tbody>
-        <tr >
-          <td><!--imagen--></td>
-          <td><!--rubro--></td>
-          <td><!--nombre local--></td>
-          <td><!--reservas--></td>
-          <td><!--btn cancelar reservas--></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
+    <table id="tableCancelacion" class="alineacionInicio" style="display:block">
+      <tbody id="cancelacionRestaurant"></tbody>
+      <tbody id="cancelacionTeatro"></tbody>
+      <tbody id="cancelacionMuseo"></tbody>
     </table>
+    <p id="msjSinCancelacionPersona" style="display:none">
+      <img src="./Imagenes/sinReservasPendientesPersona.png" style="width: 120px; margin-bottom: 20px;"><br/>
+      <i>No tienes ninguna reserva en estado <B>PENDIENTE</B> posible de ser <b>CANCELADA</b>.</i>
+    </p>
     <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalPersona')"> 
   </div>
-
   <div class="listadoReservas alineacionInicio" style="display:none"> 
-
     <button id="btnIrCancelacionReservas" class='button_cancelacion' onclick="modificarMenu('irCancelacion')" style="margin-left: 600px;">Ir a Cancelación de reservas</button>
-      <h1>Listado de reservas pendientes</h1>
-      <h4>A continuación se muestran las reservas en estado pendiente</h4><br></td>
-    
+    <h1>Listado de reservas pendientes</h1>
+    <h4>A continuación se muestran las reservas en estado pendiente</h4><br></td>
     <table id="tableReservaPersona"  class="alineacionInicio" style="display:block" >
-      <tbody  id="reservasRestaurant"></tbody>
-      <tbody   id="reservasTeatro"></tbody>
-      <tbody  id="reservasMuseo"></tbody>
+      <tbody id="reservasRestaurant"></tbody>
+      <tbody id="reservasTeatro"></tbody>
+      <tbody id="reservasMuseo"></tbody>
     </table>
-
-      <p id="msjSinPendientePersona" style="display:none">
-      <img src="./Imagenes/sinReservasPendientesPersona.png" style="width: 120px; margin-bottom: 20px;"><br/>
-       <i>No tienes ninguna reserva en estado <B>PENDIENTE</B>.</i>
-     </p>
-     <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalPersona')"> 
+    <p id="msjSinPendientePersona" style="display:none">
+        <img src="./Imagenes/sinReservasPendientesPersona.png" style="width: 120px; margin-bottom: 20px;"><br/>
+        <i>No tienes ninguna reserva en estado <B>PENDIENTE</B>.</i>
+    </p>
+    <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalPersona')"> 
   </div>
-
 </main>
 
 <!-- F09– Calificación de reservas-->
 <main class="calificacionReservas" style="display:none">
-
   <div id="calificarReservas" class="alineacionInicio">
-
     <h1>Calificación de reservas</h1>
-    <h4>A continuación se muestran las reservas concretadas posibles de ser calificadas.
-    <p> Se emplea una escala del 1 al 5.</h4></p>
-    <img src="./Imagenes/CalificacionLocal.png" alt="Calificacion del local" width="350px">
-
-    <table id="tableCalificacion" class="alineacionInicio">
-      <tbody>
-        <tr >
-        <tr >
-          <td><!--imagen--></td>
-          <td><!--rubro--></td>
-          <td><!--nombre local--></td>
-          <td><!--select para puntos--></td>
-          <td><!--btn calificar--></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+    <div id="calificacionReservasPersona" style="display:block">
+      <h4>A continuación se muestran las reservas concretadas posibles de ser calificadas.</h4>
+      <p style="margin:0px">Indique que tan satisfecho se encuentra con el local luego de su visita.</p>
+      <p style="padding:0px; margin:0px">Emplee una escala como la que se muestra a continuación:</p>
+      <img src="./Imagenes/CalificacionLocal.png" alt="Calificacion del local" width="450px" style="margin-top:40px">
+      <table id="tableCalificacion" class="alineacionInicio">
+        <tbody id="tablaCalificacion">
+        </tbody>
+      </table>
+    </div>
+    <p id="msjSinCalificacion" style="display:none">
+      <img src="./Imagenes/wow.png" style="width: 160px; margin-bottom: 20px;"><br/>
+      <i>No cuenta con locales capaces de ser <b>CALIFICADOS</b>.</i>
+    </p>
   </div>
-  
   <input type="button" value="Menu principal" class="button alineacionInicio" onclick="modificarMenu('irMenuPrincipalPersona')"> 
 </main>
 
 <footer style="display:block" >
   <div class="alineacionInicio " id="cabezal">
     <p ><b><h3> Encuentranos en las redes </h3></b></p>
-       <a target="_blank" href="https://es-la.facebook.com/" class="redes">
+    <a target="_blank" href="https://es-la.facebook.com/" class="redes">
           <img class="redes" src="./Imagenes/facebook.png" alt="Facebook">
-       </a>
-       <a target="_blank" href="https://www.instagram.com/" class="redes">
+    </a>
+    <a target="_blank" href="https://www.instagram.com/" class="redes">
           <img class="redes" src=".\Imagenes\instagram.png" alt="Instagram">
-       </a>
-       <a target="_blank" href="https://twitter.com/" class="redes">
+    </a>
+    <a target="_blank" href="https://twitter.com/" class="redes">
           <img class="redes" src=".\Imagenes\tweeter.png" alt="Tweeter">
-       </a>
+    </a>
   </div>
 </footer>
 
