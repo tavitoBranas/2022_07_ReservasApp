@@ -7,6 +7,7 @@ Local:
 - cambiar el estado de las reservas 
 - buscador amplio de reservas de una determinada persona
 - estadisticas del local (cantidad de reservas, promedio de calificaciones)
+  
 Persona:
 - permite logueo y deslogueo
 - permite realizar y cancelar reservas
