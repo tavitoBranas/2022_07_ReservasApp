@@ -1,5 +1,7 @@
 # Aplicacion para realizar reservas en locales
 
+Primera aplicación creada.
+
 Esta aplicación fue realizada empleando HTML, CSS y JavaScript en una single page.
 
 Existen dos perfiles de usuarios con diferentes funcionalidades:
